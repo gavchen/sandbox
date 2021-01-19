@@ -1,5 +1,18 @@
+{{ data.security = data.operation['x-authorized-roles']; }}
+{{ data.strictSecurity = data.operation['x-strict-roles']; }}
+
+{{? data.security && data.security.length}}
 {{= data.tags.section }}
-To perform this operation, you must have one of the following roles:
-{{= data.utils.getAuthenticationStr(data) }}
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+{{= data.utils.getAuthorizationStr(data) }}
 {{= data.tags.endSection }}
+{{?}}
+
+{{? data.strictSecurity && data.strictSecurity.length}}
+{{= data.tags.section }}
+<b>Strict Roles</b>
+{{= data.utils.getStrictAuthorizationStr(data) }}
+{{= data.tags.endSection }}
+{{?}}
 

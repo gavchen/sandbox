@@ -17,7 +17,7 @@
 {{ data.method = data.resource.methods[m]; }}
 {{ data.operationUniqueSlug = data.method.slug; }}
 {{ data.operation = data.method.operation; }}
-## {{= data.method.verb.toUpperCase() }} {{= r}}
+## {{= data.utils.getMethodName(m)}}
 {{= data.templates.operation(data, r) }}
 {{ } /* of methods */ }}
 
