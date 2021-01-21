@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_HybridClients_Secrets v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_hybridclients_secrets-secrets">Secrets</h1>
 
-## GET Secrets
+## GetHybridClientSecrets
 
 <a id="opIdSecrets_GetHybridClientSecrets"></a>
 
@@ -28,14 +17,14 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 
 <h3 id="secrets_gethybridclientsecrets-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="secrets_gethybridclientsecrets-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Hybrid Client Secret information found.|
+|200|List of [ClientSecret](#schemaclientsecret)s|Hybrid Client Secret information found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or Tenant not found.|
@@ -58,12 +47,13 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST Secrets
+## AddHybridClientSecret
 
 <a id="opIdSecrets_AddHybridClientSecret"></a>
 
@@ -90,7 +80,7 @@ ClientSecretCreateOrUpdate object.<br/>
 
 <h3 id="secrets_addhybridclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="secrets_addhybridclientsecret-responses">Responses</h3>
 
@@ -119,12 +109,13 @@ ClientSecretCreateOrUpdate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Secrets
+## GetHybridClientSecretsHeader
 
 <a id="opIdSecrets_GetHybridClientSecretsHeader"></a>
 
@@ -140,7 +131,7 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 
 <h3 id="secrets_gethybridclientsecretsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="secrets_gethybridclientsecretsheader-responses">Responses</h3>
 
@@ -154,12 +145,13 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Secrets
+## GetHybridClientSecret
 
 <a id="opIdSecrets_GetHybridClientSecret"></a>
 
@@ -172,7 +164,7 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 
 <h3 id="secrets_gethybridclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer(int32) secretId`<br/>Id of Secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer secretId`<br/>Id of Secret.</br></br>
 
 <h3 id="secrets_gethybridclientsecret-responses">Responses</h3>
 
@@ -199,12 +191,13 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT Secrets
+## UpdateHybridClientSecret
 
 <a id="opIdSecrets_UpdateHybridClientSecret"></a>
 
@@ -230,7 +223,7 @@ ClientSecretCreateOrUpdate object. Properties that are not set or are null will 
 
 <h3 id="secrets_updatehybridclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer(int32) secretId`<br/>Id of Secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer secretId`<br/>Id of Secret.</br></br>
 
 <h3 id="secrets_updatehybridclientsecret-responses">Responses</h3>
 
@@ -259,12 +252,13 @@ ClientSecretCreateOrUpdate object. Properties that are not set or are null will 
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE Secrets
+## DeleteHybridClientSecret
 
 <a id="opIdSecrets_DeleteHybridClientSecret"></a>
 
@@ -279,7 +273,7 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 
 <h3 id="secrets_deletehybridclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer(int32) secretId`<br/>Id of Secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer secretId`<br/>Id of Secret.</br></br>
 
 <h3 id="secrets_deletehybridclientsecret-responses">Responses</h3>
 
@@ -307,12 +301,13 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Secrets
+## GetHybridClientSecretHeader
 
 <a id="opIdSecrets_GetHybridClientSecretHeader"></a>
 
@@ -327,7 +322,7 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 
 <h3 id="secrets_gethybridclientsecretheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer(int32) secretId`<br/>Id of Secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer secretId`<br/>Id of Secret.</br></br>
 
 <h3 id="secrets_gethybridclientsecretheader-responses">Responses</h3>
 
@@ -341,12 +336,13 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Secrets
+## GetV1PreviewHybridClientSecrets
 
 <a id="opIdSecrets_GetV1PreviewHybridClientSecrets"></a>
 
@@ -359,14 +355,14 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 
 <h3 id="secrets_getv1previewhybridclientsecrets-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="secrets_getv1previewhybridclientsecrets-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Hybrid Client Secrets found.|
+|200|List of [ClientSecret2](#schemaclientsecret2)s|Hybrid Client Secrets found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or Tenant not found.|
@@ -390,12 +386,13 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST Secrets
+## AddV1PreviewHybridClientSecret
 
 <a id="opIdSecrets_AddV1PreviewHybridClientSecret"></a>
 
@@ -420,7 +417,7 @@ Client Secret to create.<br/>
 
 <h3 id="secrets_addv1previewhybridclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="secrets_addv1previewhybridclientsecret-responses">Responses</h3>
 
@@ -451,12 +448,13 @@ Client Secret to create.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Secrets
+## GetV1PreviewHybridClientSecret
 
 <a id="opIdSecrets_GetV1PreviewHybridClientSecret"></a>
 
@@ -469,7 +467,7 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretI
 
 <h3 id="secrets_getv1previewhybridclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>`integer(int32) secretId`<br/>Id of secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>`integer secretId`<br/>Id of secret.</br></br>
 
 <h3 id="secrets_getv1previewhybridclientsecret-responses">Responses</h3>
 
@@ -497,12 +495,13 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretI
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT Secrets
+## UpdateV1PreviewHybridClientSecret
 
 <a id="opIdSecrets_UpdateV1PreviewHybridClientSecret"></a>
 
@@ -528,7 +527,7 @@ Client Secret details.<br/>
 
 <h3 id="secrets_updatev1previewhybridclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>`integer(int32) secretId`<br/>secretId.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>`integer secretId`<br/>secretId.</br></br>
 
 <h3 id="secrets_updatev1previewhybridclientsecret-responses">Responses</h3>
 
@@ -558,10 +557,11 @@ Client Secret details.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

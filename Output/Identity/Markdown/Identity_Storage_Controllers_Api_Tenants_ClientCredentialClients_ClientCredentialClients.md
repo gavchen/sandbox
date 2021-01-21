@@ -1,20 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_ClientCredentialClients_ClientCredentialClients
-  v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_clientcredentialclients_clientcredentialclients-clientcredentialclients">ClientCredentialClients</h1>
 
-## POST ClientCredentialClients
+## CreateClientCredentialClient
 
 <a id="opIdClientCredentialClients_CreateClientCredentialClient"></a>
 
@@ -52,7 +40,7 @@ ClientCredentialClientCreate object.<br/>
 
 <h3 id="clientcredentialclients_createclientcredentialclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="clientcredentialclients_createclientcredentialclient-responses">Responses</h3>
 
@@ -94,12 +82,13 @@ ClientCredentialClientCreate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET ClientCredentialClients
+## GetClientCredentialClients
 
 <a id="opIdClientCredentialClients_GetClientCredentialClients"></a>
 
@@ -114,14 +103,14 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 
 <h3 id="clientcredentialclients_getclientcredentialclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of Client Credential Client Ids. Empty, whitespace or null Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of Client Credential Client Ids. Empty, whitespace or null Ids will be ignored.</br></br>`[optional] array tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.</br></br>`[optional] integer count`<br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.</br></br>
 
 <h3 id="clientcredentialclients_getclientcredentialclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Client Credential Clients found.|
+|200|List of [ClientCredentialClient](#schemaclientcredentialclient)s|Client Credential Clients found.|
 |207|[ClientCredentialClientMultiStatusResponse](#schemaclientcredentialclientmultistatusresponse)|Client Credential Clients found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -151,13 +140,18 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## HEAD ClientCredentialClients
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetClientCredentialClientsHeader
 
 <a id="opIdClientCredentialClients_GetClientCredentialClientsHeader"></a>
 
@@ -174,8 +168,8 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients
 
 <h3 id="clientcredentialclients_getclientcredentialclientsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of Client Credential Client Ids. Empty, whitespace or null Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only count Clients that have these tags.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of Client Credential Client Ids. Empty, whitespace or null Ids will be ignored.</br></br>`[optional] array tag`<br/>Only count Clients that have these tags.</br></br>
 
 <h3 id="clientcredentialclients_getclientcredentialclientsheader-responses">Responses</h3>
 
@@ -189,13 +183,18 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## PUT ClientCredentialClients
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## UpdateClientCredentialClient
 
 <a id="opIdClientCredentialClients_UpdateClientCredentialClient"></a>
 
@@ -228,7 +227,7 @@ ClientCredentialClient object. Properties that are not set or are null will not 
 
 <h3 id="clientcredentialclients_updateclientcredentialclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="clientcredentialclients_updateclientcredentialclient-responses">Responses</h3>
 
@@ -263,12 +262,13 @@ ClientCredentialClient object. Properties that are not set or are null will not 
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET ClientCredentialClients
+## GetClientCredentialClient
 
 <a id="opIdClientCredentialClients_GetClientCredentialClient"></a>
 
@@ -281,7 +281,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 
 <h3 id="clientcredentialclients_getclientcredentialclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="clientcredentialclients_getclientcredentialclient-responses">Responses</h3>
 
@@ -314,13 +314,19 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+<li>Self</li>
+</ul>
 
-## DELETE ClientCredentialClients
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## DeleteClientCredentialClient
 
 <a id="opIdClientCredentialClients_DeleteClientCredentialClient"></a>
 
@@ -335,7 +341,7 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 
 <h3 id="clientcredentialclients_deleteclientcredentialclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="clientcredentialclients_deleteclientcredentialclient-responses">Responses</h3>
 
@@ -363,12 +369,13 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD ClientCredentialClients
+## GetClientCredentialClientHeader
 
 <a id="opIdClientCredentialClients_GetClientCredentialClientHeader"></a>
 
@@ -383,7 +390,7 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 
 <h3 id="clientcredentialclients_getclientcredentialclientheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="clientcredentialclients_getclientcredentialclientheader-responses">Responses</h3>
 
@@ -397,13 +404,19 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+<li>Self</li>
+</ul>
 
-## GET ClientCredentialClients
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetV1PreviewClientCredentialClients
 
 <a id="opIdClientCredentialClients_GetV1PreviewClientCredentialClients"></a>
 
@@ -416,14 +429,14 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 
 <h3 id="clientcredentialclients_getv1previewclientcredentialclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="clientcredentialclients_getv1previewclientcredentialclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of ClientCredentialClients found.|
+|200|List of [ClientCredentialClient2](#schemaclientcredentialclient2)s|List of ClientCredentialClients found.|
 |207|[ClientCredentialClientMultiStatusResponse2](#schemaclientcredentialclientmultistatusresponse2)|List of ClientCredentialClients found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -453,12 +466,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## POST ClientCredentialClients
+## CreateV1PreviewClientCredentialClient
 
 <a id="opIdClientCredentialClients_CreateV1PreviewClientCredentialClient"></a>
 
@@ -492,7 +506,7 @@ New ClientCredentialClientCreate object.<br/>
 
 <h3 id="clientcredentialclients_createv1previewclientcredentialclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="clientcredentialclients_createv1previewclientcredentialclient-responses">Responses</h3>
 
@@ -531,12 +545,13 @@ New ClientCredentialClientCreate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET ClientCredentialClients
+## GetV1PreviewClientCredentialClient
 
 <a id="opIdClientCredentialClients_GetV1PreviewClientCredentialClient"></a>
 
@@ -549,7 +564,7 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 
 <h3 id="clientcredentialclients_getv1previewclientcredentialclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="clientcredentialclients_getv1previewclientcredentialclient-responses">Responses</h3>
 
@@ -582,12 +597,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## PUT ClientCredentialClients
+## UpdateV1PreviewClientCredentialClient
 
 <a id="opIdClientCredentialClients_UpdateV1PreviewClientCredentialClient"></a>
 
@@ -619,7 +635,7 @@ Updated Client Credential Client values.<br/>
 
 <h3 id="clientcredentialclients_updatev1previewclientcredentialclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="clientcredentialclients_updatev1previewclientcredentialclient-responses">Responses</h3>
 
@@ -654,10 +670,11 @@ Updated Client Credential Client values.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

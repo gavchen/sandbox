@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_Roles v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_roles-roles">Roles</h1>
 
-## GET Roles
+## GetTenantRoles
 
 <a id="opIdRoles_GetTenantRoles"></a>
 
@@ -26,14 +15,14 @@ GET /api/v1/Tenants/{tenantId}/Roles
 
 <h3 id="roles_gettenantroles-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of tenant.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of providers to skip.</br></br>`[optional] integer(int32) count`<br/>Max number of providers to return.</br></br>
+`string tenantId`<br/>Id of tenant.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of providers to skip.</br></br>`[optional] integer count`<br/>Max number of providers to return.</br></br>
 
 <h3 id="roles_gettenantroles-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of Roles found.|
+|200|List of [Role](#schemarole)s|List of Roles found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found.|
@@ -59,13 +48,18 @@ GET /api/v1/Tenants/{tenantId}/Roles
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## HEAD Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetTenantRolesHeader
 
 <a id="opIdRoles_GetTenantRolesHeader"></a>
 
@@ -78,7 +72,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles
 
 <h3 id="roles_gettenantrolesheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>
 
 <h3 id="roles_gettenantrolesheader-responses">Responses</h3>
 
@@ -92,13 +86,18 @@ HEAD /api/v1/Tenants/{tenantId}/Roles
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## POST Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## PostTenantRole
 
 <a id="opIdRoles_PostTenantRole"></a>
 
@@ -127,7 +126,7 @@ Role to create.<br/>
 
 <h3 id="roles_posttenantrole-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant ID.</br></br>
+`string tenantId`<br/>Tenant ID.</br></br>
 
 <h3 id="roles_posttenantrole-responses">Responses</h3>
 
@@ -161,12 +160,13 @@ Role to create.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Roles
+## GetUsersCountForARole
 
 <a id="opIdRoles_GetUsersCountForARole"></a>
 
@@ -179,7 +179,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 
 <h3 id="roles_getuserscountforarole-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id for the Role.</br></br>`string(guid) roleId`<br/>Role Id.</br></br>
+`string tenantId`<br/>Tenant Id for the Role.</br></br>`string roleId`<br/>Role Id.</br></br>
 
 <h3 id="roles_getuserscountforarole-responses">Responses</h3>
 
@@ -193,13 +193,18 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## GET Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetUsersForARole
 
 <a id="opIdRoles_GetUsersForARole"></a>
 
@@ -212,13 +217,13 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 
 <h3 id="roles_getusersforarole-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) roleId`<br/>Role Id.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string roleId`<br/>Role Id.</br></br>
 
 <h3 id="roles_getusersforarole-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Users for a given role.|
+|200|List of [User](#schemauser)s|Users for a given role.|
 |401|None|Unauthorized.|
 |403|None|Forbidden.|
 |404|None|Tenant or Role not found.|
@@ -250,13 +255,18 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/users
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## HEAD Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetClientCredentialClientsCountForARole
 
 <a id="opIdRoles_GetClientCredentialClientsCountForARole"></a>
 
@@ -269,7 +279,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 
 <h3 id="roles_getclientcredentialclientscountforarole-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) roleId`<br/>Role Id.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string roleId`<br/>Role Id.</br></br>
 
 <h3 id="roles_getclientcredentialclientscountforarole-responses">Responses</h3>
 
@@ -283,13 +293,18 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## GET Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetClientCredentialClientsForARole
 
 <a id="opIdRoles_GetClientCredentialClientsForARole"></a>
 
@@ -302,13 +317,13 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 
 <h3 id="roles_getclientcredentialclientsforarole-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) roleId`<br/>Role Id.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string roleId`<br/>Role Id.</br></br>
 
 <h3 id="roles_getclientcredentialclientsforarole-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Clients for a given role.|
+|200|List of [ClientCredentialClient](#schemaclientcredentialclient)s|Clients for a given role.|
 |401|None|Unauthorized.|
 |403|None|Forbidden.|
 |404|None|Tenant or Role not found.|
@@ -337,13 +352,18 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}/clientcredentialclients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## GET Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetTenantRole
 
 <a id="opIdRoles_GetTenantRole"></a>
 
@@ -356,7 +376,7 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 
 <h3 id="roles_gettenantrole-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) roleId`<br/>Role Id.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string roleId`<br/>Role Id.</br></br>
 
 <h3 id="roles_gettenantrole-responses">Responses</h3>
 
@@ -386,13 +406,18 @@ GET /api/v1/Tenants/{tenantId}/Roles/{roleId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## HEAD Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetTenantRoleHeader
 
 <a id="opIdRoles_GetTenantRoleHeader"></a>
 
@@ -405,7 +430,7 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 
 <h3 id="roles_gettenantroleheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of tenant.</br></br>`string(guid) roleId`<br/>Id of provider.</br></br>
+`string tenantId`<br/>Id of tenant.</br></br>`string roleId`<br/>Id of provider.</br></br>
 
 <h3 id="roles_gettenantroleheader-responses">Responses</h3>
 
@@ -419,13 +444,18 @@ HEAD /api/v1/Tenants/{tenantId}/Roles/{roleId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## PUT Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## PutTenantRole
 
 <a id="opIdRoles_PutTenantRole"></a>
 
@@ -454,7 +484,7 @@ Role to update.<br/>
 
 <h3 id="roles_puttenantrole-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant ID.</br></br>`string(guid) roleId`<br/>Role ID.</br></br>
+`string tenantId`<br/>Tenant ID.</br></br>`string roleId`<br/>Role ID.</br></br>
 
 <h3 id="roles_puttenantrole-responses">Responses</h3>
 
@@ -486,12 +516,13 @@ Role to update.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE Roles
+## DeleteTenantRole
 
 <a id="opIdRoles_DeleteTenantRole"></a>
 
@@ -504,7 +535,7 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 
 <h3 id="roles_deletetenantrole-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant ID.</br></br>`string(guid) roleId`<br/>Role ID.</br></br>
+`string tenantId`<br/>Tenant ID.</br></br>`string roleId`<br/>Role ID.</br></br>
 
 <h3 id="roles_deletetenantrole-responses">Responses</h3>
 
@@ -533,10 +564,11 @@ DELETE /api/v1/Tenants/{tenantId}/Roles/{roleId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

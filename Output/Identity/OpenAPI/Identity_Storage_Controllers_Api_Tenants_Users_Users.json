@@ -8,7 +8,7 @@
       "url": "https://cloud.osisoft.com",
       "email": "cloudservices@osisoft.com"
     },
-    "version": "20210115.09"
+    "version": "20210121.2"
   },
   "paths": {
     "/api/v1/Tenants/{tenantId}/Users": {
@@ -16,7 +16,7 @@
         "tags": [
           "Users"
         ],
-        "summary": "Get a list of users from a Tenant. Optionally, get a list of requested users.\n            Total number of users in the Tenant set in the Total-Count header.",
+        "summary": "Get a list of users from a Tenant. Optionally, get a list of requested users. Total number of users in the Tenant set in the Total-Count header.\n",
         "operationId": "Users_GetUsers",
         "parameters": [
           {
@@ -627,6 +627,44 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/User"
+                },
+                "example": {
+                  "1": {
+                    "value": {
+                      "Id": "00000000-0000-0000-0000-000000000001",
+                      "GivenName": "Name1",
+                      "Surname": "Surname1",
+                      "Name": "Name1",
+                      "Email": "user1@company.com",
+                      "ContactEmail": "user1@company.com",
+                      "ContactGivenName": "Name1",
+                      "ContactSurname": "Surname1",
+                      "ExternalUserId": "ExternalUserId1",
+                      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+                      "RoleIds": [
+                        "00000000-0000-0000-0000-000000000000",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "2": {
+                    "value": {
+                      "Id": "00000000-0000-0000-0000-000000000002",
+                      "GivenName": "Name2",
+                      "Surname": "Surname2",
+                      "Name": "Name2",
+                      "Email": "user2@company.com",
+                      "ContactEmail": "user2@company.com",
+                      "ContactGivenName": "Name2",
+                      "ContactSurname": "Surname2",
+                      "ExternalUserId": "ExternalUserId2",
+                      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+                      "RoleIds": [
+                        "00000000-0000-0000-0000-000000000000",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  }
                 }
               }
             }

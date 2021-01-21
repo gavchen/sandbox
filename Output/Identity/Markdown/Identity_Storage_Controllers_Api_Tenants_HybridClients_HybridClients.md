@@ -1,20 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_HybridClients_HybridClients
-  v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_hybridclients_hybridclients-hybridclients">HybridClients</h1>
 
-## POST HybridClients
+## CreateHybridClient
 
 <a id="opIdHybridClients_CreateHybridClient"></a>
 
@@ -53,7 +41,7 @@ HybridClientCreate object.<br/>
 
 <h3 id="hybridclients_createhybridclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="hybridclients_createhybridclient-responses">Responses</h3>
 
@@ -96,12 +84,13 @@ HybridClientCreate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET HybridClients
+## GetHybridClients
 
 <a id="opIdHybridClients_GetHybridClients"></a>
 
@@ -116,14 +105,14 @@ GET /api/v1/Tenants/{tenantId}/HybridClients
 
 <h3 id="hybridclients_gethybridclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of Hybrid Client Ids. Empty, whitespace or null Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of Hybrid Client Ids. Empty, whitespace or null Ids will be ignored.</br></br>`[optional] array tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.</br></br>`[optional] integer count`<br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.</br></br>
 
 <h3 id="hybridclients_gethybridclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Hybrid Clients found.|
+|200|List of [HybridClient](#schemahybridclient)s|Hybrid Clients found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found.|
@@ -159,12 +148,13 @@ GET /api/v1/Tenants/{tenantId}/HybridClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD HybridClients
+## GetHybridClientsHeader
 
 <a id="opIdHybridClients_GetHybridClientsHeader"></a>
 
@@ -181,8 +171,8 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients
 
 <h3 id="hybridclients_gethybridclientsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of Hybrid Client Ids. Empty, whitespace or null Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only count clients that have these tags.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of Hybrid Client Ids. Empty, whitespace or null Ids will be ignored.</br></br>`[optional] array tag`<br/>Only count clients that have these tags.</br></br>
 
 <h3 id="hybridclients_gethybridclientsheader-responses">Responses</h3>
 
@@ -196,12 +186,13 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT HybridClients
+## UpdateHybridClient
 
 <a id="opIdHybridClients_UpdateHybridClient"></a>
 
@@ -241,7 +232,7 @@ HybridClient object. Properties that are not set or are null will not be changed
 
 <h3 id="hybridclients_updatehybridclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="hybridclients_updatehybridclient-responses">Responses</h3>
 
@@ -283,12 +274,13 @@ HybridClient object. Properties that are not set or are null will not be changed
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET HybridClients
+## GetHybridClient
 
 <a id="opIdHybridClients_GetHybridClient"></a>
 
@@ -301,7 +293,7 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 
 <h3 id="hybridclients_gethybridclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="hybridclients_gethybridclient-responses">Responses</h3>
 
@@ -341,12 +333,13 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE HybridClients
+## DeleteHybridClient
 
 <a id="opIdHybridClients_DeleteHybridClient"></a>
 
@@ -362,7 +355,7 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 
 <h3 id="hybridclients_deletehybridclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="hybridclients_deletehybridclient-responses">Responses</h3>
 
@@ -390,12 +383,13 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD HybridClients
+## GetHybridClientHeader
 
 <a id="opIdHybridClients_GetHybridClientHeader"></a>
 
@@ -410,7 +404,7 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 
 <h3 id="hybridclients_gethybridclientheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="hybridclients_gethybridclientheader-responses">Responses</h3>
 
@@ -424,12 +418,13 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST HybridClients
+## CreateV1PreviewHybridClient
 
 <a id="opIdHybridClients_CreateV1PreviewHybridClient"></a>
 
@@ -464,7 +459,7 @@ New HybridClientCreate object.<br/>
 
 <h3 id="hybridclients_createv1previewhybridclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="hybridclients_createv1previewhybridclient-responses">Responses</h3>
 
@@ -505,12 +500,13 @@ New HybridClientCreate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET HybridClients
+## GetV1PreviewHybridClients
 
 <a id="opIdHybridClients_GetV1PreviewHybridClients"></a>
 
@@ -523,14 +519,14 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients
 
 <h3 id="hybridclients_getv1previewhybridclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="hybridclients_getv1previewhybridclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of Hybrid Clients found.|
+|200|List of [HybridClient2](#schemahybridclient2)s|List of Hybrid Clients found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found.|
@@ -566,12 +562,13 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT HybridClients
+## UpdateV1PreviewHybridClient
 
 <a id="opIdHybridClients_UpdateV1PreviewHybridClient"></a>
 
@@ -610,7 +607,7 @@ Updated Hybrid Client values.<br/>
 
 <h3 id="hybridclients_updatev1previewhybridclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="hybridclients_updatev1previewhybridclient-responses">Responses</h3>
 
@@ -652,12 +649,13 @@ Updated Hybrid Client values.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET HybridClients
+## GetV1PreviewHybridClient
 
 <a id="opIdHybridClients_GetV1PreviewHybridClient"></a>
 
@@ -670,7 +668,7 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 
 <h3 id="hybridclients_getv1previewhybridclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="hybridclients_getv1previewhybridclient-responses">Responses</h3>
 
@@ -710,10 +708,11 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

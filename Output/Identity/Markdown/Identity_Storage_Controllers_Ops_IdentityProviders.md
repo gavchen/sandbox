@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Ops_IdentityProviders v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_ops_identityproviders-identityproviders">IdentityProviders</h1>
 
-## GET IdentityProviders
+## GetIdentityProviderConsent
 
 <a id="opIdIdentityProviders_GetIdentityProviderConsent"></a>
 
@@ -26,8 +15,8 @@ GET /api/v1/IdentityProviders/{identityProviderId}/Consent
 
 <h3 id="identityproviders_getidentityproviderconsent-parameters">Parameters</h3>
 
-`string(guid) identityProviderId`<br/>Id of provider.</br></br>
-`[optional] string idpTenantDomain`<br/>Identity Provider Tenant Domain. Mutually exclusive to idpTenantId. Currently only supports AAD Domain.</br></br>`[optional] string idpTenantId`<br/>Identity Provider Tenant Id. Mutually exclusive to idpTenantDomain. Currently only supports AAD Tenant Id.</br></br>`[optional] any format`<br/>Output format.</br></br>
+`string identityProviderId`<br/>Id of provider.</br></br>
+`[optional] string idpTenantDomain`<br/>Identity Provider Tenant Domain. Mutually exclusive to idpTenantId. Currently only supports AAD Domain.</br></br>`[optional] string idpTenantId`<br/>Identity Provider Tenant Id. Mutually exclusive to idpTenantDomain. Currently only supports AAD Tenant Id.</br></br>`[optional] undefined format`<br/>Output format.</br></br>
 
 <h3 id="identityproviders_getidentityproviderconsent-responses">Responses</h3>
 

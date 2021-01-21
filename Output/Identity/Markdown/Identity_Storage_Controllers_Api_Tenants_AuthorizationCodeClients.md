@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_AuthorizationCodeClients v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_authorizationcodeclients-authorizationcodeclients">AuthorizationCodeClients</h1>
 
-## POST AuthorizationCodeClients
+## CreateAuthorizationCodeClient
 
 <a id="opIdAuthorizationCodeClients_CreateAuthorizationCodeClient"></a>
 
@@ -54,7 +43,7 @@ New AuthorizationCodeClient object.<br/>
 
 <h3 id="authorizationcodeclients_createauthorizationcodeclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="authorizationcodeclients_createauthorizationcodeclient-responses">Responses</h3>
 
@@ -98,12 +87,13 @@ New AuthorizationCodeClient object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET AuthorizationCodeClients
+## GetAuthorizationCodeClients
 
 <a id="opIdAuthorizationCodeClients_GetAuthorizationCodeClients"></a>
 
@@ -118,14 +108,14 @@ GET /api/v1/Tenants/{tenantId}/AuthorizationCodeClients
 
 <h3 id="authorizationcodeclients_getauthorizationcodeclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="authorizationcodeclients_getauthorizationcodeclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Authorization Code Clients found.|
+|200|List of [AuthorizationCodeClient](#schemaauthorizationcodeclient)s|Authorization Code Clients found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found.|
@@ -162,12 +152,13 @@ GET /api/v1/Tenants/{tenantId}/AuthorizationCodeClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD AuthorizationCodeClients
+## GetAuthorizationCodeClientsHeader
 
 <a id="opIdAuthorizationCodeClients_GetAuthorizationCodeClientsHeader"></a>
 
@@ -184,8 +175,8 @@ HEAD /api/v1/Tenants/{tenantId}/AuthorizationCodeClients
 
 <h3 id="authorizationcodeclients_getauthorizationcodeclientsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only count Clients that have these tags.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array tag`<br/>Only count Clients that have these tags.</br></br>
 
 <h3 id="authorizationcodeclients_getauthorizationcodeclientsheader-responses">Responses</h3>
 
@@ -199,12 +190,13 @@ HEAD /api/v1/Tenants/{tenantId}/AuthorizationCodeClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT AuthorizationCodeClients
+## UpdateAuthorizationCodeClient
 
 <a id="opIdAuthorizationCodeClients_UpdateAuthorizationCodeClient"></a>
 
@@ -245,7 +237,7 @@ Updated Authorization Code Client values. Properties that are not set or are nul
 
 <h3 id="authorizationcodeclients_updateauthorizationcodeclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="authorizationcodeclients_updateauthorizationcodeclient-responses">Responses</h3>
 
@@ -288,12 +280,13 @@ Updated Authorization Code Client values. Properties that are not set or are nul
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET AuthorizationCodeClients
+## GetAuthorizationCodeClient
 
 <a id="opIdAuthorizationCodeClients_GetAuthorizationCodeClient"></a>
 
@@ -306,7 +299,7 @@ GET /api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}
 
 <h3 id="authorizationcodeclients_getauthorizationcodeclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="authorizationcodeclients_getauthorizationcodeclient-responses">Responses</h3>
 
@@ -347,12 +340,13 @@ GET /api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE AuthorizationCodeClients
+## DeleteAuthorizationCodeClient
 
 <a id="opIdAuthorizationCodeClients_DeleteAuthorizationCodeClient"></a>
 
@@ -367,7 +361,7 @@ DELETE /api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}
 
 <h3 id="authorizationcodeclients_deleteauthorizationcodeclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="authorizationcodeclients_deleteauthorizationcodeclient-responses">Responses</h3>
 
@@ -395,12 +389,13 @@ DELETE /api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD AuthorizationCodeClients
+## GetAuthorizationCodeClientHeader
 
 <a id="opIdAuthorizationCodeClients_GetAuthorizationCodeClientHeader"></a>
 
@@ -413,7 +408,7 @@ HEAD /api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}
 
 <h3 id="authorizationcodeclients_getauthorizationcodeclientheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="authorizationcodeclients_getauthorizationcodeclientheader-responses">Responses</h3>
 
@@ -446,10 +441,11 @@ HEAD /api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

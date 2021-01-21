@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Cluster_Tenants_Users_UserInformation v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_cluster_tenants_users_userinformation-userinformation">UserInformation</h1>
 
-## GET UserInformation
+## GetUserInformationForTokenRefresh
 
 <a id="opIdUserInformation_GetUserInformationForTokenRefresh"></a>
 
@@ -26,7 +15,7 @@ GET /api/v1/tenants/{tenantId}/users/{userId}/UserInformation
 
 <h3 id="userinformation_getuserinformationfortokenrefresh-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>User Id.</br></br>`string claimTypes`<br/>Claim Types.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>User Id.</br></br>`string claimTypes`<br/>Claim Types.</br></br>
 
 <h3 id="userinformation_getuserinformationfortokenrefresh-responses">Responses</h3>
 
@@ -60,10 +49,11 @@ GET /api/v1/tenants/{tenantId}/users/{userId}/UserInformation
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 
