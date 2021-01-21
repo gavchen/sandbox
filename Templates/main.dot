@@ -41,6 +41,7 @@
 <a id="tocS{{=s.toLowerCase()}}"></a>
 <a id="tocs{{=s.toLowerCase()}}"></a>
 
+{{? origSchema.type === 'object' }}
 {{? data.options.yaml }}
 ```yaml
 {{=data.utils.yaml.stringify(data.utils.getSample(schema,data.options,{quiet:true},data.api))}}
@@ -49,15 +50,24 @@
 {{=data.utils.safejson(data.utils.getSample(schema,data.options,{quiet:true},data.api),null,2)}}
 {{?}}
 ```
+{{?}}
 
 {{ var enums = []; }}
 {{ var blocks = data.utils.schemaToArray(origSchema,-1,{trim:true,join:true},data); }}
 {{ for (var block of blocks) {
      for (var p of block.rows) {
        if (p.schema && p.schema.enum) {
-         for (var e of p.schema.enum) {
-           enums.push({name:p.name,value:e});
-         }
+		if(p.schema['x-enumNames']){
+			var val = 0;
+			for (var e of p.schema.enum) {
+				enums.push({name:p.schema['x-enumNames'][val],value:e});
+				val++;
+			}
+		}else{
+			for (var e of p.schema.enum) {
+				enums.push({name:p.name,value:e});
+			}
+		}		
        }
      }
    }
@@ -69,20 +79,24 @@
 <a href="{{=block.externalDocs.url}}">{{=block.externalDocs.description||'External documentation'}}</a>
 {{?}}
 
+{{ var filteredProperties = data.utils.getFilteredProperties(block, data); }}
+{{? filteredProperties.length}}
+
 {{? block===blocks[0] }}
 {{= data.tags.section }}
 
 ### Properties
 {{?}}
 
-{{? block.rows.length}}|Name|Type|Required|Restrictions|Description|
+{{? filteredProperties.length}}|Name|Type|Required|Nullable|Description|
 |---|---|---|---|---|{{?}}
-{{~ block.rows :p}}|{{=p.displayName}}|{{=p.safeType}}|{{=p.required}}|{{=p.restrictions||'none'}}|{{=p.description||'none'}}|
+{{~ filteredProperties :p}}|{{=p.displayName}}|{{? p.format}}{{=p.format}}{{??}}{{=p.safeType}}{{?}}|{{=p.required}}|{{=p.nullable||'false'}}|{{=p.description||'None'}}|
 {{~}}
-{{~}}
-{{? (blocks[0].rows.length === 0) && (blocks.length === 1) }}
-*None*
+
 {{?}}
+
+{{~}}
+
 
 {{? enums.length > 0 }}
 {{= data.tags.section }}
