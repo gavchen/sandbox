@@ -1,20 +1,8 @@
----
-title: Identity_Storage_CloudControllers_Api_Communities_ClientCredentialClients
-  v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_cloudcontrollers_api_communities_clientcredentialclients-clientcredentialclients">ClientCredentialClients</h1>
 
-## HEAD ClientCredentialClients
+## GetCommunityClientCredentialClientsCount
 
 <a id="opIdClientCredentialClients_GetCommunityClientCredentialClientsCount"></a>
 
@@ -27,7 +15,7 @@ HEAD /api/v1/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClient
 
 <h3 id="clientcredentialclients_getcommunityclientcredentialclientscount-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string(guid) communityId`<br/>Id of the Community.</br></br>
+`string tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string communityId`<br/>Id of the Community.</br></br>
 
 <h3 id="clientcredentialclients_getcommunityclientcredentialclientscount-responses">Responses</h3>
 
@@ -55,12 +43,13 @@ HEAD /api/v1/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClient
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Member</li>
+</ul>
 
-## GET ClientCredentialClients
+## GetCommunityClientCredentialClients
 
 <a id="opIdClientCredentialClients_GetCommunityClientCredentialClients"></a>
 
@@ -73,13 +62,13 @@ GET /api/v1/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients
 
 <h3 id="clientcredentialclients_getcommunityclientcredentialclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string(guid) communityId`<br/>Id of Community.</br></br>
+`string tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string communityId`<br/>Id of Community.</br></br>
 
 <h3 id="clientcredentialclients_getcommunityclientcredentialclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Success.|
+|200|List of [ClientCredentialClient](#schemaclientcredentialclient)s|Success.|
 |400|[ErrorResponse](#schemaerrorresponse)|BadRequest.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -109,12 +98,13 @@ GET /api/v1/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Member</li>
+</ul>
 
-## PUT ClientCredentialClients
+## AddClientCredentialClientToCommunity
 
 <a id="opIdClientCredentialClients_AddClientCredentialClientToCommunity"></a>
 
@@ -127,7 +117,7 @@ PUT /api/v1/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients
 
 <h3 id="clientcredentialclients_addclientcredentialclienttocommunity-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of the Tenant that belongs to this Community</br></br>`string(guid) communityId`<br/>Id of Community.</br></br>`string clientId`<br/>Id of the Client Credential Client to add to the specified Community.</br></br>
+`string tenantId`<br/>Id of the Tenant that belongs to this Community</br></br>`string communityId`<br/>Id of Community.</br></br>`string clientId`<br/>Id of the Client Credential Client to add to the specified Community.</br></br>
 
 <h3 id="clientcredentialclients_addclientcredentialclienttocommunity-responses">Responses</h3>
 
@@ -161,12 +151,14 @@ PUT /api/v1/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Administrator</li>
+<li>Community Moderator</li>
+</ul>
 
-## DELETE ClientCredentialClients
+## RemoveClientCredentialClientFromCommunity
 
 <a id="opIdClientCredentialClients_RemoveClientCredentialClientFromCommunity"></a>
 
@@ -179,7 +171,7 @@ DELETE /api/v1/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClie
 
 <h3 id="clientcredentialclients_removeclientcredentialclientfromcommunity-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string(guid) communityId`<br/>Id of Community.</br></br>`string clientId`<br/>Id of the Client Credential Client to remove from the specified Community.</br></br>
+`string tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string communityId`<br/>Id of Community.</br></br>`string clientId`<br/>Id of the Client Credential Client to remove from the specified Community.</br></br>
 
 <h3 id="clientcredentialclients_removeclientcredentialclientfromcommunity-responses">Responses</h3>
 
@@ -207,10 +199,12 @@ DELETE /api/v1/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClie
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Administrator</li>
+<li>Community Moderator</li>
+</ul>
 
 # Schemas
 

@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_IdentityProviders_ClaimTypeNames v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_identityproviders_claimtypenames-claimtypenames">ClaimTypeNames</h1>
 
-## GET ClaimTypeNames
+## GetIdentityProviderClaimTypeNames
 
 <a id="opIdClaimTypeNames_GetIdentityProviderClaimTypeNames"></a>
 
@@ -26,14 +15,14 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 
 <h3 id="claimtypenames_getidentityproviderclaimtypenames-parameters">Parameters</h3>
 
-`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of Identity Providers to skip.</br></br>`[optional] integer(int32) count`<br/>Maximum number of Identity Providers to return.</br></br>
+`string identityProviderId`<br/>Id of Identity Provider.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of Identity Providers to skip.</br></br>`[optional] integer count`<br/>Maximum number of Identity Providers to return.</br></br>
 
 <h3 id="claimtypenames_getidentityproviderclaimtypenames-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Identity Provider Type Names found.|
+|200|List of [IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)s|Identity Provider Type Names found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity Provider not found.|
@@ -55,12 +44,13 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD ClaimTypeNames
+## GetIdentityProviderClaimTypeNamesHeader
 
 <a id="opIdClaimTypeNames_GetIdentityProviderClaimTypeNamesHeader"></a>
 
@@ -73,7 +63,7 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 
 <h3 id="claimtypenames_getidentityproviderclaimtypenamesheader-parameters">Parameters</h3>
 
-`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="claimtypenames_getidentityproviderclaimtypenamesheader-responses">Responses</h3>
 
@@ -87,12 +77,13 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET ClaimTypeNames
+## GetIdentityProviderClaimTypeName
 
 <a id="opIdClaimTypeNames_GetIdentityProviderClaimTypeName"></a>
 
@@ -105,7 +96,7 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
 
 <h3 id="claimtypenames_getidentityproviderclaimtypename-parameters">Parameters</h3>
 
-`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>`string(guid) identityProviderClaimTypeNameId`<br/>Id of Identity Provider Claim Type Name.</br></br>
+`string identityProviderId`<br/>Id of Identity Provider.</br></br>`string identityProviderClaimTypeNameId`<br/>Id of Identity Provider Claim Type Name.</br></br>
 
 <h3 id="claimtypenames_getidentityproviderclaimtypename-responses">Responses</h3>
 
@@ -134,12 +125,13 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD ClaimTypeNames
+## GetIdentityProviderClaimTypeNameHeader
 
 <a id="opIdClaimTypeNames_GetIdentityProviderClaimTypeNameHeader"></a>
 
@@ -152,7 +144,7 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProv
 
 <h3 id="claimtypenames_getidentityproviderclaimtypenameheader-parameters">Parameters</h3>
 
-`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>`string(guid) identityProviderClaimTypeNameId`<br/>Id of Identity Provider Claim Type Name.</br></br>
+`string identityProviderId`<br/>Id of Identity Provider.</br></br>`string identityProviderClaimTypeNameId`<br/>Id of Identity Provider Claim Type Name.</br></br>
 
 <h3 id="claimtypenames_getidentityproviderclaimtypenameheader-responses">Responses</h3>
 
@@ -166,10 +158,11 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProv
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

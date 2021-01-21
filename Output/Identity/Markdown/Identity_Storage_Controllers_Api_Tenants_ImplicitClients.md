@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_ImplicitClients v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_implicitclients-implicitclients">ImplicitClients</h1>
 
-## POST ImplicitClients
+## CreateImplicitClient
 
 <a id="opIdImplicitClients_CreateImplicitClient"></a>
 
@@ -54,7 +43,7 @@ New ImplicitClient object.<br/>
 
 <h3 id="implicitclients_createimplicitclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="implicitclients_createimplicitclient-responses">Responses</h3>
 
@@ -98,12 +87,13 @@ New ImplicitClient object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET ImplicitClients
+## GetImplicitClients
 
 <a id="opIdImplicitClients_GetImplicitClients"></a>
 
@@ -118,14 +108,14 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients
 
 <h3 id="implicitclients_getimplicitclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. Will be ignored if a list of Ids is passed.</br></br>`[optional] integer count`<br/>Maximum number of clients to return. Will be ignored if a list of Ids is passed.</br></br>
 
 <h3 id="implicitclients_getimplicitclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Implicit Clients found.|
+|200|List of [ImplicitClient](#schemaimplicitclient)s|Implicit Clients found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found.|
@@ -162,12 +152,13 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD ImplicitClients
+## GetImplicitClientsHeader
 
 <a id="opIdImplicitClients_GetImplicitClientsHeader"></a>
 
@@ -184,8 +175,8 @@ HEAD /api/v1/Tenants/{tenantId}/ImplicitClients
 
 <h3 id="implicitclients_getimplicitclientsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only count Clients that have these tags.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array tag`<br/>Only count Clients that have these tags.</br></br>
 
 <h3 id="implicitclients_getimplicitclientsheader-responses">Responses</h3>
 
@@ -199,12 +190,13 @@ HEAD /api/v1/Tenants/{tenantId}/ImplicitClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT ImplicitClients
+## UpdateImplicitClient
 
 <a id="opIdImplicitClients_UpdateImplicitClient"></a>
 
@@ -245,7 +237,7 @@ Updated Implicit Client values. Properties that are not set or are null will not
 
 <h3 id="implicitclients_updateimplicitclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="implicitclients_updateimplicitclient-responses">Responses</h3>
 
@@ -288,12 +280,13 @@ Updated Implicit Client values. Properties that are not set or are null will not
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET ImplicitClients
+## GetImplicitClient
 
 <a id="opIdImplicitClients_GetImplicitClient"></a>
 
@@ -306,7 +299,7 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 
 <h3 id="implicitclients_getimplicitclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="implicitclients_getimplicitclient-responses">Responses</h3>
 
@@ -347,12 +340,13 @@ GET /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE ImplicitClients
+## DeleteImplicitClient
 
 <a id="opIdImplicitClients_DeleteImplicitClient"></a>
 
@@ -367,7 +361,7 @@ DELETE /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 
 <h3 id="implicitclients_deleteimplicitclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="implicitclients_deleteimplicitclient-responses">Responses</h3>
 
@@ -395,12 +389,13 @@ DELETE /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD ImplicitClients
+## GetImplicitClientHeader
 
 <a id="opIdImplicitClients_GetImplicitClientHeader"></a>
 
@@ -413,7 +408,7 @@ HEAD /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 
 <h3 id="implicitclients_getimplicitclientheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="implicitclients_getimplicitclientheader-responses">Responses</h3>
 
@@ -427,12 +422,13 @@ HEAD /api/v1/Tenants/{tenantId}/ImplicitClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST ImplicitClients
+## CreateV1PreviewImplicitClient
 
 <a id="opIdImplicitClients_CreateV1PreviewImplicitClient"></a>
 
@@ -472,7 +468,7 @@ New ImplicitClient object.<br/>
 
 <h3 id="implicitclients_createv1previewimplicitclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="implicitclients_createv1previewimplicitclient-responses">Responses</h3>
 
@@ -516,12 +512,13 @@ New ImplicitClient object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET ImplicitClients
+## GetV1PreviewImplicitClients
 
 <a id="opIdImplicitClients_GetV1PreviewImplicitClients"></a>
 
@@ -534,14 +531,14 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients
 
 <h3 id="implicitclients_getv1previewimplicitclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="implicitclients_getv1previewimplicitclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Implicit Clients found.|
+|200|List of [ImplicitClient2](#schemaimplicitclient2)s|Implicit Clients found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found.|
@@ -578,12 +575,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT ImplicitClients
+## UpdateV1PreviewImplicitClient
 
 <a id="opIdImplicitClients_UpdateV1PreviewImplicitClient"></a>
 
@@ -623,7 +621,7 @@ Updated Implicit Client values.<br/>
 
 <h3 id="implicitclients_updatev1previewimplicitclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="implicitclients_updatev1previewimplicitclient-responses">Responses</h3>
 
@@ -666,12 +664,13 @@ Updated Implicit Client values.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET ImplicitClients
+## GetV1PreviewImplicitClient
 
 <a id="opIdImplicitClients_GetV1PreviewImplicitClient"></a>
 
@@ -684,7 +683,7 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}
 
 <h3 id="implicitclients_getv1previewimplicitclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="implicitclients_getv1previewimplicitclient-responses">Responses</h3>
 
@@ -725,10 +724,11 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

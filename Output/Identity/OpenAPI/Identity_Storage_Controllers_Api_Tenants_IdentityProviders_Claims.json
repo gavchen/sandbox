@@ -8,7 +8,7 @@
       "url": "https://cloud.osisoft.com",
       "email": "cloudservices@osisoft.com"
     },
-    "version": "20210115.09"
+    "version": "20210121.2"
   },
   "paths": {
     "/api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims": {

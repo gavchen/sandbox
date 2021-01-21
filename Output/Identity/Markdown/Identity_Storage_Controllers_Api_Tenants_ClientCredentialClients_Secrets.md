@@ -1,20 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_ClientCredentialClients_Secrets
-  v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_clientcredentialclients_secrets-secrets">Secrets</h1>
 
-## GET Secrets
+## GetClientCredentialClientSecrets
 
 <a id="opIdSecrets_GetClientCredentialClientSecrets"></a>
 
@@ -29,14 +17,14 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 
 <h3 id="secrets_getclientcredentialclientsecrets-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="secrets_getclientcredentialclientsecrets-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Client Credential Secret information found.|
+|200|List of [ClientSecret](#schemaclientsecret)s|Client Credential Secret information found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or Tenant not found.|
@@ -59,12 +47,13 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST Secrets
+## AddClientCredentialClientSecret
 
 <a id="opIdSecrets_AddClientCredentialClientSecret"></a>
 
@@ -91,7 +80,7 @@ ClientSecretCreateOrUpdate object.<br/>
 
 <h3 id="secrets_addclientcredentialclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="secrets_addclientcredentialclientsecret-responses">Responses</h3>
 
@@ -121,12 +110,13 @@ ClientSecretCreateOrUpdate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Secrets
+## GetClientCredentialClientSecretsHeader
 
 <a id="opIdSecrets_GetClientCredentialClientSecretsHeader"></a>
 
@@ -142,7 +132,7 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 
 <h3 id="secrets_getclientcredentialclientsecretsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="secrets_getclientcredentialclientsecretsheader-responses">Responses</h3>
 
@@ -156,12 +146,13 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Secrets
+## GetClientCredentialClientSecret
 
 <a id="opIdSecrets_GetClientCredentialClientSecret"></a>
 
@@ -174,7 +165,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secre
 
 <h3 id="secrets_getclientcredentialclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer(int32) secretId`<br/>Id of Secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer secretId`<br/>Id of Secret.</br></br>
 
 <h3 id="secrets_getclientcredentialclientsecret-responses">Responses</h3>
 
@@ -201,12 +192,13 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secre
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT Secrets
+## UpdateClientCredentialClientSecret
 
 <a id="opIdSecrets_UpdateClientCredentialClientSecret"></a>
 
@@ -233,7 +225,7 @@ ClientSecretCreateOrUpdate object. Properties that are not set or are null will 
 
 <h3 id="secrets_updateclientcredentialclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer(int32) secretId`<br/>Id of Secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer secretId`<br/>Id of Secret.</br></br>
 
 <h3 id="secrets_updateclientcredentialclientsecret-responses">Responses</h3>
 
@@ -262,12 +254,13 @@ ClientSecretCreateOrUpdate object. Properties that are not set or are null will 
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE Secrets
+## DeleteClientCredentialClientSecret
 
 <a id="opIdSecrets_DeleteClientCredentialClientSecret"></a>
 
@@ -283,7 +276,7 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{se
 
 <h3 id="secrets_deleteclientcredentialclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer(int32) secretId`<br/>Id of Secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer secretId`<br/>Id of Secret.</br></br>
 
 <h3 id="secrets_deleteclientcredentialclientsecret-responses">Responses</h3>
 
@@ -311,12 +304,13 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{se
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Secrets
+## GetClientCredentialClientSecretHeader
 
 <a id="opIdSecrets_GetClientCredentialClientSecretHeader"></a>
 
@@ -331,7 +325,7 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secr
 
 <h3 id="secrets_getclientcredentialclientsecretheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer(int32) secretId`<br/>Id of Secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>`integer secretId`<br/>Id of Secret.</br></br>
 
 <h3 id="secrets_getclientcredentialclientsecretheader-responses">Responses</h3>
 
@@ -345,12 +339,13 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secr
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Secrets
+## GetV1PreviewClientCredentialClientSecrets
 
 <a id="opIdSecrets_GetV1PreviewClientCredentialClientSecrets"></a>
 
@@ -363,14 +358,14 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret
 
 <h3 id="secrets_getv1previewclientcredentialclientsecrets-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="secrets_getv1previewclientcredentialclientsecrets-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Client Credential Client Secrets found.|
+|200|List of [ClientSecret2](#schemaclientsecret2)s|Client Credential Client Secrets found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or Tenant not found.|
@@ -394,12 +389,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST Secrets
+## AddV1PreviewClientCredentialClientSecret
 
 <a id="opIdSecrets_AddV1PreviewClientCredentialClientSecret"></a>
 
@@ -424,7 +420,7 @@ Client Secret to create.<br/>
 
 <h3 id="secrets_addv1previewclientcredentialclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>
 
 <h3 id="secrets_addv1previewclientcredentialclientsecret-responses">Responses</h3>
 
@@ -455,12 +451,13 @@ Client Secret to create.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Secrets
+## GetV1PreviewClientCredentialClientSecret
 
 <a id="opIdSecrets_GetV1PreviewClientCredentialClientSecret"></a>
 
@@ -473,7 +470,7 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret
 
 <h3 id="secrets_getv1previewclientcredentialclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>`integer(int32) secretId`<br/>Id of secret.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>`integer secretId`<br/>Id of secret.</br></br>
 
 <h3 id="secrets_getv1previewclientcredentialclientsecret-responses">Responses</h3>
 
@@ -501,12 +498,13 @@ GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secret
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT Secrets
+## UpdateV1PreviewClientCredentialClientSecret
 
 <a id="opIdSecrets_UpdateV1PreviewClientCredentialClientSecret"></a>
 
@@ -532,7 +530,7 @@ Client Secret details.<br/>
 
 <h3 id="secrets_updatev1previewclientcredentialclientsecret-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>`integer(int32) secretId`<br/>secretId.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of client.</br></br>`integer secretId`<br/>secretId.</br></br>
 
 <h3 id="secrets_updatev1previewclientcredentialclientsecret-responses">Responses</h3>
 
@@ -562,10 +560,11 @@ Client Secret details.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

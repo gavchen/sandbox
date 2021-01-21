@@ -1,20 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_AzureActiveDirectoryTenants
-  v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_azureactivedirectorytenants-azureactivedirectorytenants">AzureActiveDirectoryTenants</h1>
 
-## POST AzureActiveDirectoryTenants
+## AddAadTenantToTenant
 
 <a id="opIdAzureActiveDirectoryTenants_AddAadTenantToTenant"></a>
 
@@ -27,7 +15,7 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 
 <h3 id="azureactivedirectorytenants_addaadtenanttotenant-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id or Domain Name of Azure Active Directory Tenant.</br></br>
+`string tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id or Domain Name of Azure Active Directory Tenant.</br></br>
 
 <h3 id="azureactivedirectorytenants_addaadtenanttotenant-responses">Responses</h3>
 
@@ -56,12 +44,13 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET AzureActiveDirectoryTenants
+## GetAadTenantForTenant
 
 <a id="opIdAzureActiveDirectoryTenants_GetAadTenantForTenant"></a>
 
@@ -74,7 +63,7 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 
 <h3 id="azureactivedirectorytenants_getaadtenantfortenant-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id of Azure Active Directory Tenant.</br></br>
+`string tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id of Azure Active Directory Tenant.</br></br>
 
 <h3 id="azureactivedirectorytenants_getaadtenantfortenant-responses">Responses</h3>
 
@@ -101,12 +90,13 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE AzureActiveDirectoryTenants
+## RemoveAadTenantFromTenant
 
 <a id="opIdAzureActiveDirectoryTenants_RemoveAadTenantFromTenant"></a>
 
@@ -119,7 +109,7 @@ DELETE /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 
 <h3 id="azureactivedirectorytenants_removeaadtenantfromtenant-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id of Azure Active Directory Tenant to remove.</br></br>
+`string tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id of Azure Active Directory Tenant to remove.</br></br>
 
 <h3 id="azureactivedirectorytenants_removeaadtenantfromtenant-responses">Responses</h3>
 
@@ -133,12 +123,13 @@ DELETE /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD AzureActiveDirectoryTenants
+## GetAadTenantHeaderForTenant
 
 <a id="opIdAzureActiveDirectoryTenants_GetAadTenantHeaderForTenant"></a>
 
@@ -153,7 +144,7 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 
 <h3 id="azureactivedirectorytenants_getaadtenantheaderfortenant-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id of Azure Active Directory Tenant.</br></br>
+`string tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id of Azure Active Directory Tenant.</br></br>
 
 <h3 id="azureactivedirectorytenants_getaadtenantheaderfortenant-responses">Responses</h3>
 
@@ -168,12 +159,13 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET AzureActiveDirectoryTenants
+## GetAadTenantsForTenant
 
 <a id="opIdAzureActiveDirectoryTenants_GetAadTenantsForTenant"></a>
 
@@ -186,14 +178,14 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 
 <h3 id="azureactivedirectorytenants_getaadtenantsfortenant-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of Azure Active Directory tenants to skip.</br></br>`[optional] integer(int32) count`<br/>Maximum number of Azure Active Directory tenants to return.</br></br>
+`string tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of Azure Active Directory tenants to skip.</br></br>`[optional] integer count`<br/>Maximum number of Azure Active Directory tenants to return.</br></br>
 
 <h3 id="azureactivedirectorytenants_getaadtenantsfortenant-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of AzureActiveDirectoryTenants found.|
+|200|List of [AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant)s|List of AzureActiveDirectoryTenants found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|or|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
@@ -214,12 +206,13 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD AzureActiveDirectoryTenants
+## GetAadTenantsHeaderForTenant
 
 <a id="opIdAzureActiveDirectoryTenants_GetAadTenantsHeaderForTenant"></a>
 
@@ -234,7 +227,7 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 
 <h3 id="azureactivedirectorytenants_getaadtenantsheaderfortenant-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>
+`string tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>
 
 <h3 id="azureactivedirectorytenants_getaadtenantsheaderfortenant-responses">Responses</h3>
 
@@ -249,12 +242,13 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST AzureActiveDirectoryTenants
+## SendAadTenantConsentRequest
 
 <a id="opIdAzureActiveDirectoryTenants_SendAadTenantConsentRequest"></a>
 
@@ -284,7 +278,7 @@ ConsentInformation object.<br/>
 
 <h3 id="azureactivedirectorytenants_sendaadtenantconsentrequest-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id of Azure Active Directory Tenant.</br></br>
+`string tenantId`<br/>Id of OSIsoft Cloud Services Tenant.</br></br>`string aadTenantId`<br/>Id of Azure Active Directory Tenant.</br></br>
 
 <h3 id="azureactivedirectorytenants_sendaadtenantconsentrequest-responses">Responses</h3>
 
@@ -312,10 +306,11 @@ ConsentInformation object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

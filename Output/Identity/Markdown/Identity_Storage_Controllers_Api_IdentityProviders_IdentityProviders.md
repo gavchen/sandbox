@@ -1,20 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_IdentityProviders_IdentityProviders
-  v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_identityproviders_identityproviders-identityproviders">IdentityProviders</h1>
 
-## GET IdentityProviders
+## GetIdentityProvider
 
 <a id="opIdIdentityProviders_GetIdentityProvider"></a>
 
@@ -27,7 +15,7 @@ GET /api/v1/IdentityProviders/{identityProviderId}
 
 <h3 id="identityproviders_getidentityprovider-parameters">Parameters</h3>
 
-`string(guid) identityProviderId`<br/>Id of provider.</br></br>
+`string identityProviderId`<br/>Id of provider.</br></br>
 
 <h3 id="identityproviders_getidentityprovider-responses">Responses</h3>
 
@@ -67,12 +55,13 @@ GET /api/v1/IdentityProviders/{identityProviderId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## HEAD IdentityProviders
+## GetIdentityProviderHeader
 
 <a id="opIdIdentityProviders_GetIdentityProviderHeader"></a>
 
@@ -85,7 +74,7 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}
 
 <h3 id="identityproviders_getidentityproviderheader-parameters">Parameters</h3>
 
-`string(guid) identityProviderId`<br/>Id of provider.</br></br>
+`string identityProviderId`<br/>Id of provider.</br></br>
 
 <h3 id="identityproviders_getidentityproviderheader-responses">Responses</h3>
 
@@ -99,12 +88,13 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET IdentityProviders
+## GetIdentityProviderByScheme
 
 <a id="opIdIdentityProviders_GetIdentityProviderByScheme"></a>
 
@@ -157,12 +147,13 @@ GET /api/v1/IdentityProviders/schemes/{scheme}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## HEAD IdentityProviders
+## GetIdentityProviderSchemeHeader
 
 <a id="opIdIdentityProviders_GetIdentityProviderSchemeHeader"></a>
 
@@ -189,12 +180,13 @@ HEAD /api/v1/IdentityProviders/schemes/{scheme}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET IdentityProviders
+## GetIdentityProviders
 
 <a id="opIdIdentityProviders_GetIdentityProviders"></a>
 
@@ -207,13 +199,13 @@ GET /api/v1/IdentityProviders
 
 <h3 id="identityproviders_getidentityproviders-parameters">Parameters</h3>
 
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of providers to skip.</br></br>`[optional] integer(int32) count`<br/>Maximum number of providers to return.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of providers to skip.</br></br>`[optional] integer count`<br/>Maximum number of providers to return.</br></br>
 
 <h3 id="identityproviders_getidentityproviders-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Identity Providers found.|
+|200|List of [IdentityProvider](#schemaidentityprovider)s|Identity Providers found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -242,12 +234,13 @@ GET /api/v1/IdentityProviders
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## HEAD IdentityProviders
+## GetIdentityProvidersHeader
 
 <a id="opIdIdentityProviders_GetIdentityProvidersHeader"></a>
 
@@ -270,10 +263,11 @@ HEAD /api/v1/IdentityProviders
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

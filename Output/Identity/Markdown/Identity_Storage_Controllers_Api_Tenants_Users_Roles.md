@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_Users_Roles v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_users_roles-roles">Roles</h1>
 
-## GET Roles
+## GetUserRoles
 
 <a id="opIdRoles_GetUserRoles"></a>
 
@@ -26,14 +15,14 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 
 <h3 id="roles_getuserroles-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant ID.</br></br>`string(guid) userId`<br/>User ID.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of Roles to skip.</br></br>`[optional] integer(int32) count`<br/>Max number of Roles to return.</br></br>
+`string tenantId`<br/>Tenant ID.</br></br>`string userId`<br/>User ID.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of Roles to skip.</br></br>`[optional] integer count`<br/>Max number of Roles to return.</br></br>
 
 <h3 id="roles_getuserroles-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of Roles found.|
+|200|List of [Role](#schemarole)s|List of Roles found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -60,13 +49,19 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+<li>Self</li>
+</ul>
 
-## HEAD Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetUserRolesHeader
 
 <a id="opIdRoles_GetUserRolesHeader"></a>
 
@@ -79,7 +74,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 
 <h3 id="roles_getuserrolesheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant ID.</br></br>`string(guid) userId`<br/>User ID.</br></br>
+`string tenantId`<br/>Tenant ID.</br></br>`string userId`<br/>User ID.</br></br>
 
 <h3 id="roles_getuserrolesheader-responses">Responses</h3>
 
@@ -93,13 +88,19 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+<li>Self</li>
+</ul>
 
-## PUT Roles
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## PutUserRoles
 
 <a id="opIdRoles_PutUserRoles"></a>
 
@@ -130,13 +131,13 @@ Update Roles list.<br/>
 
 <h3 id="roles_putuserroles-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant ID.</br></br>`string(guid) userId`<br/>User ID.</br></br>
+`string tenantId`<br/>Tenant ID.</br></br>`string userId`<br/>User ID.</br></br>
 
 <h3 id="roles_putuserroles-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|No content.|
+|200|List of [Role](#schemarole)s|No content.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing preferences.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -164,10 +165,12 @@ Update Roles list.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Lead
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Lead</li>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

@@ -1,19 +1,8 @@
----
-title: Identity_Storage_CloudControllers_Api_Tenants_Invitations v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_cloudcontrollers_api_tenants_invitations-invitations">Invitations</h1>
 
-## GET Invitations
+## GetInvitation
 
 <a id="opIdInvitations_GetInvitation"></a>
 
@@ -26,7 +15,7 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 <h3 id="invitations_getinvitation-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string invitationId`<br/>Id of Invitation.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string invitationId`<br/>Id of Invitation.</br></br>
 
 <h3 id="invitations_getinvitation-responses">Responses</h3>
 
@@ -56,12 +45,13 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT Invitations
+## UpdateInvitation
 
 <a id="opIdInvitations_UpdateInvitation"></a>
 
@@ -88,7 +78,7 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 
 <h3 id="invitations_updateinvitation-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string invitationId`<br/>Id of Invitation.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string invitationId`<br/>Id of Invitation.</br></br>
 
 <h3 id="invitations_updateinvitation-responses">Responses</h3>
 
@@ -120,12 +110,13 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE Invitations
+## DeleteInvitation
 
 <a id="opIdInvitations_DeleteInvitation"></a>
 
@@ -139,7 +130,7 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 <h3 id="invitations_deleteinvitation-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string invitationId`<br/>Id of Invitation.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string invitationId`<br/>Id of Invitation.</br></br>
 
 <h3 id="invitations_deleteinvitation-responses">Responses</h3>
 
@@ -168,12 +159,13 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Invitations
+## GetInvitationHeader
 
 <a id="opIdInvitations_GetInvitationHeader"></a>
 
@@ -187,7 +179,7 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 <h3 id="invitations_getinvitationheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string invitationId`<br/>Id of Invitation.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string invitationId`<br/>Id of Invitation.</br></br>
 
 <h3 id="invitations_getinvitationheader-responses">Responses</h3>
 
@@ -201,12 +193,13 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Invitations
+## GetInvitations
 
 <a id="opIdInvitations_GetInvitations"></a>
 
@@ -219,14 +212,14 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 
 <h3 id="invitations_getinvitations-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of invitations to skip.</br></br>`[optional] integer(int32) count`<br/>Maximum number of invitations to return.</br></br>`[optional] boolean includeExpiredInvitations`<br/>Specify whether to return expired invitations.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of invitations to skip.</br></br>`[optional] integer count`<br/>Maximum number of invitations to return.</br></br>`[optional] boolean includeExpiredInvitations`<br/>Specify whether to return expired invitations.</br></br>
 
 <h3 id="invitations_getinvitations-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Invitations found.|
+|200|List of [Invitation](#schemainvitation)s|Invitations found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -253,12 +246,13 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Invitations
+## GetInvitationsHeader
 
 <a id="opIdInvitations_GetInvitationsHeader"></a>
 
@@ -273,7 +267,7 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 
 <h3 id="invitations_getinvitationsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 `[optional] boolean includeExpiredInvitations`<br/>Specify to return expired invitations.</br></br>
 
 <h3 id="invitations_getinvitationsheader-responses">Responses</h3>
@@ -289,10 +283,11 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

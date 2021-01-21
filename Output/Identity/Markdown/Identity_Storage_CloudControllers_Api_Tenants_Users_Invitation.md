@@ -1,19 +1,8 @@
----
-title: Identity_Storage_CloudControllers_Api_Tenants_Users_Invitation v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_cloudcontrollers_api_tenants_users_invitation-invitation">Invitation</h1>
 
-## GET Invitation
+## GetUserInvitation
 
 <a id="opIdInvitation_GetUserInvitation"></a>
 
@@ -26,7 +15,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 
 <h3 id="invitation_getuserinvitation-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="invitation_getuserinvitation-responses">Responses</h3>
 
@@ -56,12 +45,13 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST Invitation
+## CreateInvitation
 
 <a id="opIdInvitation_CreateInvitation"></a>
 
@@ -87,7 +77,7 @@ InvitationCreateOrUpdate object.<br/>
 
 <h3 id="invitation_createinvitation-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="invitation_createinvitation-responses">Responses</h3>
 
@@ -121,12 +111,13 @@ InvitationCreateOrUpdate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT Invitation
+## CreateOrUpdateInvitation
 
 <a id="opIdInvitation_CreateOrUpdateInvitation"></a>
 
@@ -152,7 +143,7 @@ InvitationCreateOrUpdate object.<br/>
 
 <h3 id="invitation_createorupdateinvitation-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="invitation_createorupdateinvitation-responses">Responses</h3>
 
@@ -186,12 +177,13 @@ InvitationCreateOrUpdate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE Invitation
+## DeleteUserInvitation
 
 <a id="opIdInvitation_DeleteUserInvitation"></a>
 
@@ -204,7 +196,7 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 
 <h3 id="invitation_deleteuserinvitation-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="invitation_deleteuserinvitation-responses">Responses</h3>
 
@@ -232,12 +224,13 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Invitation
+## GetUserInvitationHeader
 
 <a id="opIdInvitation_GetUserInvitationHeader"></a>
 
@@ -252,7 +245,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 
 <h3 id="invitation_getuserinvitationheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 `[optional] boolean includeExpiredInvitations`<br/>Specify whether to include expired invitations.</br></br>
 
 <h3 id="invitation_getuserinvitationheader-responses">Responses</h3>
@@ -268,10 +261,11 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

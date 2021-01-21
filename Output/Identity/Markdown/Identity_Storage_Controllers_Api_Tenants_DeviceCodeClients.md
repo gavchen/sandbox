@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_DeviceCodeClients v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_devicecodeclients-devicecodeclients">DeviceCodeClients</h1>
 
-## POST DeviceCodeClients
+## CreateDeviceCodeClient
 
 <a id="opIdDeviceCodeClients_CreateDeviceCodeClient"></a>
 
@@ -45,7 +34,7 @@ New DeviceCodeClient object.<br/>
 
 <h3 id="devicecodeclients_createdevicecodeclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="devicecodeclients_createdevicecodeclient-responses">Responses</h3>
 
@@ -81,12 +70,13 @@ New DeviceCodeClient object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET DeviceCodeClients
+## GetDeviceCodeClients
 
 <a id="opIdDeviceCodeClients_GetDeviceCodeClients"></a>
 
@@ -101,14 +91,14 @@ GET /api/v1/Tenants/{tenantId}/DeviceCodeClients
 
 <h3 id="devicecodeclients_getdevicecodeclients-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer(int32) count`<br/>Maximum number of clients to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array tag`<br/>Only return Clients that have these tags.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of clients to skip. From query.</br></br>`[optional] integer count`<br/>Maximum number of clients to return.</br></br>
 
 <h3 id="devicecodeclients_getdevicecodeclients-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Device Code Clients found.|
+|200|List of [DeviceCodeClient](#schemadevicecodeclient)s|Device Code Clients found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found.|
@@ -137,12 +127,13 @@ GET /api/v1/Tenants/{tenantId}/DeviceCodeClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD DeviceCodeClients
+## GetDeviceCodeClientsHeader
 
 <a id="opIdDeviceCodeClients_GetDeviceCodeClientsHeader"></a>
 
@@ -159,8 +150,8 @@ HEAD /api/v1/Tenants/{tenantId}/DeviceCodeClients
 
 <h3 id="devicecodeclients_getdevicecodeclientsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array[string] tag`<br/>Only count Clients that have these tags.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of ids for all clients to get. Empty or whitespace Ids will be ignored.</br></br>`[optional] array tag`<br/>Only count Clients that have these tags.</br></br>
 
 <h3 id="devicecodeclients_getdevicecodeclientsheader-responses">Responses</h3>
 
@@ -174,12 +165,13 @@ HEAD /api/v1/Tenants/{tenantId}/DeviceCodeClients
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT DeviceCodeClients
+## UpdateDeviceCodeClient
 
 <a id="opIdDeviceCodeClients_UpdateDeviceCodeClient"></a>
 
@@ -212,7 +204,7 @@ Updated Device Code Client values. Properties that are not set or are null will 
 
 <h3 id="devicecodeclients_updatedevicecodeclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="devicecodeclients_updatedevicecodeclient-responses">Responses</h3>
 
@@ -247,12 +239,13 @@ Updated Device Code Client values. Properties that are not set or are null will 
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET DeviceCodeClients
+## GetDeviceCodeClient
 
 <a id="opIdDeviceCodeClients_GetDeviceCodeClient"></a>
 
@@ -265,7 +258,7 @@ GET /api/v1/Tenants/{tenantId}/DeviceCodeClients/{clientId}
 
 <h3 id="devicecodeclients_getdevicecodeclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="devicecodeclients_getdevicecodeclient-responses">Responses</h3>
 
@@ -298,12 +291,13 @@ GET /api/v1/Tenants/{tenantId}/DeviceCodeClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE DeviceCodeClients
+## DeleteDeviceCodeClient
 
 <a id="opIdDeviceCodeClients_DeleteDeviceCodeClient"></a>
 
@@ -318,7 +312,7 @@ DELETE /api/v1/Tenants/{tenantId}/DeviceCodeClients/{clientId}
 
 <h3 id="devicecodeclients_deletedevicecodeclient-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="devicecodeclients_deletedevicecodeclient-responses">Responses</h3>
 
@@ -346,12 +340,13 @@ DELETE /api/v1/Tenants/{tenantId}/DeviceCodeClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD DeviceCodeClients
+## GetDeviceCodeClientHeader
 
 <a id="opIdDeviceCodeClients_GetDeviceCodeClientHeader"></a>
 
@@ -364,7 +359,7 @@ HEAD /api/v1/Tenants/{tenantId}/DeviceCodeClients/{clientId}
 
 <h3 id="devicecodeclients_getdevicecodeclientheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string clientId`<br/>Id of Client.</br></br>
 
 <h3 id="devicecodeclients_getdevicecodeclientheader-responses">Responses</h3>
 
@@ -397,10 +392,11 @@ HEAD /api/v1/Tenants/{tenantId}/DeviceCodeClients/{clientId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

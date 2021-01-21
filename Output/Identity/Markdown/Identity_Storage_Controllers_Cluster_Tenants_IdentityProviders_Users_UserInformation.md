@@ -1,20 +1,8 @@
----
-title: Identity_Storage_Controllers_Cluster_Tenants_IdentityProviders_Users_UserInformation
-  v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_cluster_tenants_identityproviders_users_userinformation-userinformation">UserInformation</h1>
 
-## GET UserInformation
+## GetUserInformationForAuthentication
 
 <a id="opIdUserInformation_GetUserInformationForAuthentication"></a>
 
@@ -27,7 +15,7 @@ GET /api/v1/tenants/{tenantId}/identityproviders/{identityProviderId}/users/{ide
 
 <h3 id="userinformation_getuserinformationforauthentication-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Identity Provider Id.</br></br>`string identityProviderSpecificUserId`<br/>Identity Provider Specific User Id. Ex. ExternalUserId for AD, ObjectId for AAD.</br></br>`string claimTypes`<br/>Claim Types.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Identity Provider Id.</br></br>`string identityProviderSpecificUserId`<br/>Identity Provider Specific User Id. Ex. ExternalUserId for AD, ObjectId for AAD.</br></br>`string claimTypes`<br/>Claim Types.</br></br>
 
 <h3 id="userinformation_getuserinformationforauthentication-responses">Responses</h3>
 
@@ -60,10 +48,11 @@ GET /api/v1/tenants/{tenantId}/identityproviders/{identityProviderId}/users/{ide
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

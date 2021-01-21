@@ -1,19 +1,8 @@
----
-title: Identity_Storage_CloudControllers_Api_Communities_Roles v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_cloudcontrollers_api_communities_roles-roles">Roles</h1>
 
-## GET Roles
+## GetInstancedCommunityRoles
 
 <a id="opIdRoles_GetInstancedCommunityRoles"></a>
 
@@ -26,13 +15,13 @@ GET /api/v1/Communities/{communityId}/Roles
 
 <h3 id="roles_getinstancedcommunityroles-parameters">Parameters</h3>
 
-`string(guid) communityId`<br/>Id of Community.</br></br>
+`string communityId`<br/>Id of Community.</br></br>
 
 <h3 id="roles_getinstancedcommunityroles-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of instanced Roles for this Community.|
+|200|List of [Role](#schemarole)s|List of instanced Roles for this Community.|
 |400|[ErrorResponse](#schemaerrorresponse)|BadRequest.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -59,10 +48,11 @@ GET /api/v1/Communities/{communityId}/Roles
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Member</li>
+</ul>
 
 # Schemas
 

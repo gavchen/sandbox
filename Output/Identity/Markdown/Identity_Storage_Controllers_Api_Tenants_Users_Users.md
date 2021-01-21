@@ -1,24 +1,12 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_Users_Users v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_users_users-users">Users</h1>
 
-## GET Users
+## GetUsers
 
 <a id="opIdUsers_GetUsers"></a>
 
-Get a list of users from a Tenant. Optionally, get a list of requested users.
-            Total number of users in the Tenant set in the Total-Count header.
+Get a list of users from a Tenant. Optionally, get a list of requested users. Total number of users in the Tenant set in the Total-Count header.
 
 ### Request
 ```text 
@@ -27,14 +15,14 @@ GET /api/v1/Tenants/{tenantId}/Users
 
 <h3 id="users_getusers-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of User Ids to get.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of users to skip. Ignored if a list of Ids is passed.</br></br>`[optional] integer(int32) count`<br/>Maximum number of users to return. Ignored if a list of Ids is passed.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of User Ids to get.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of users to skip. Ignored if a list of Ids is passed.</br></br>`[optional] integer count`<br/>Maximum number of users to return. Ignored if a list of Ids is passed.</br></br>
 
 <h3 id="users_getusers-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of Users found.|
+|200|List of [User](#schemauser)s|List of Users found.|
 |207|[UserMultiStatusResponse](#schemausermultistatusresponse)|List of Users found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
@@ -169,13 +157,18 @@ GET /api/v1/Tenants/{tenantId}/Users
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## POST Users
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## CreateUser
 
 <a id="opIdUsers_CreateUser"></a>
 
@@ -211,7 +204,7 @@ UserCreateOrUpdate object.<br/>
 
 <h3 id="users_createuser-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="users_createuser-responses">Responses</h3>
 
@@ -249,12 +242,13 @@ UserCreateOrUpdate object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Users
+## GetUsersHeader
 
 <a id="opIdUsers_GetUsersHeader"></a>
 
@@ -269,8 +263,8 @@ HEAD /api/v1/Tenants/{tenantId}/Users
 
 <h3 id="users_getusersheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of User Ids.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of User Ids.</br></br>
 
 <h3 id="users_getusersheader-responses">Responses</h3>
 
@@ -284,13 +278,18 @@ HEAD /api/v1/Tenants/{tenantId}/Users
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## GET Users
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetUsersStatus
 
 <a id="opIdUsers_GetUsersStatus"></a>
 
@@ -303,14 +302,14 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 
 <h3 id="users_getusersstatus-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] id`<br/>Unordered list of User Ids to get.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of users to skip. Ignored if a list of Ids is passed.</br></br>`[optional] integer(int32) count`<br/>Maximum number of users to return. Ignored if a list of Ids is passed.</br></br>`[optional] array[string] status`<br/>Only return statuses that match these values. Possible User statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array id`<br/>Unordered list of User Ids to get.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of users to skip. Ignored if a list of Ids is passed.</br></br>`[optional] integer count`<br/>Maximum number of users to return. Ignored if a list of Ids is passed.</br></br>`[optional] array status`<br/>Only return statuses that match these values. Possible User statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.</br></br>
 
 <h3 id="users_getusersstatus-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of User Statuses found.|
+|200|List of [UserStatus](#schemauserstatus)s|List of User Statuses found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs. Test|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -346,13 +345,18 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## GET Users
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetUserModel
 
 <a id="opIdUsers_GetUserModel"></a>
 
@@ -365,7 +369,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}
 
 <h3 id="users_getusermodel-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="users_getusermodel-responses">Responses</h3>
 
@@ -383,31 +387,71 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}
 
 ```json
 {
-  "Id": "string",
-  "GivenName": "string",
-  "Surname": "string",
-  "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
-  "ContactGivenName": "string",
-  "ContactSurname": "string",
-  "ExternalUserId": "string",
-  "IdentityProviderId": "string",
-  "RoleIds": [
-    "string"
-  ]
+  "1": {
+    "value": {
+      "Id": "00000000-0000-0000-0000-000000000001",
+      "GivenName": "Name1",
+      "Surname": "Surname1",
+      "Name": "Name1",
+      "Email": "user1@company.com",
+      "ContactEmail": "user1@company.com",
+      "ContactGivenName": "Name1",
+      "ContactSurname": "Surname1",
+      "ExternalUserId": "ExternalUserId1",
+      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+      "RoleIds": [
+        "00000000-0000-0000-0000-000000000000",
+        "00000000-0000-0000-0000-000000000000"
+      ]
+    }
+  },
+  "2": {
+    "value": {
+      "Id": "00000000-0000-0000-0000-000000000002",
+      "GivenName": "Name2",
+      "Surname": "Surname2",
+      "Name": "Name2",
+      "Email": "user2@company.com",
+      "ContactEmail": "user2@company.com",
+      "ContactGivenName": "Name2",
+      "ContactSurname": "Surname2",
+      "ExternalUserId": "ExternalUserId2",
+      "IdentityProviderId": "00000000-0000-0000-0000-000000000000",
+      "RoleIds": [
+        "00000000-0000-0000-0000-000000000000",
+        "00000000-0000-0000-0000-000000000000"
+      ]
+    }
+  }
+}
+```
+
+> 401 Response
+
+```json
+{
+  "OperationId": "1b2af18e-8b27-4f86-93e0-6caa3e59b90c",
+  "Error": "Error message.",
+  "Reason": "Reason that caused error.",
+  "Resolution": "Possible solution for the error."
 }
 ```
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+<li>Self</li>
+</ul>
 
-## PUT Users
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## UpdateUser
 
 <a id="opIdUsers_UpdateUser"></a>
 
@@ -439,7 +483,7 @@ UserCreateOrUpdate object. Properties that are not set or are null will not be c
 
 <h3 id="users_updateuser-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="users_updateuser-responses">Responses</h3>
 
@@ -477,12 +521,13 @@ UserCreateOrUpdate object. Properties that are not set or are null will not be c
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE Users
+## DeleteUser
 
 <a id="opIdUsers_DeleteUser"></a>
 
@@ -500,7 +545,7 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 
 <h3 id="users_deleteuser-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 `[optional] boolean force`<br/>Forcibly delete a User that can remain due to claim role mappings.</br></br>
 
 <h3 id="users_deleteuser-responses">Responses</h3>
@@ -525,12 +570,13 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Users
+## GetUserHeader
 
 <a id="opIdUsers_GetUserHeader"></a>
 
@@ -544,7 +590,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}
 
 <h3 id="users_getuserheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="users_getuserheader-responses">Responses</h3>
 
@@ -558,13 +604,19 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+<li>Self</li>
+</ul>
 
-## GET Users
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetUserStatus
 
 <a id="opIdUsers_GetUserStatus"></a>
 
@@ -578,7 +630,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
 
 <h3 id="users_getuserstatus-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="users_getuserstatus-responses">Responses</h3>
 
@@ -617,13 +669,19 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+<li>Self</li>
+</ul>
 
-## GET Users
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetUserPreferences
 
 <a id="opIdUsers_GetUserPreferences"></a>
 
@@ -637,7 +695,7 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 
 <h3 id="users_getuserpreferences-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="users_getuserpreferences-responses">Responses</h3>
 
@@ -659,12 +717,14 @@ null
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+<li>Self</li>
+</ul>
 
-## PUT Users
+## UpdateUserPreferences
 
 <a id="opIdUsers_UpdateUserPreferences"></a>
 
@@ -685,7 +745,7 @@ null
 
 <h3 id="users_updateuserpreferences-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="users_updateuserpreferences-responses">Responses</h3>
 
@@ -708,12 +768,14 @@ null
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+<li>Self</li>
+</ul>
 
-## HEAD Users
+## GetUserPreferencesHeader
 
 <a id="opIdUsers_GetUserPreferencesHeader"></a>
 
@@ -727,7 +789,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 
 <h3 id="users_getuserpreferencesheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of User.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of User.</br></br>
 
 <h3 id="users_getuserpreferencesheader-responses">Responses</h3>
 
@@ -741,12 +803,14 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+<li>Self</li>
+</ul>
 
-## GET Users
+## GetV1PreviewUsersByIds
 
 <a id="opIdUsers_GetV1PreviewUsersByIds"></a>
 
@@ -759,14 +823,14 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 
 <h3 id="users_getv1previewusersbyids-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] userId`<br/>Unordered list of ids for all users to get.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Items to skip. Currently not supported.</br></br>`[optional] integer(int32) count`<br/>Maximum items to return. Currently not supported.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array userId`<br/>Unordered list of ids for all users to get.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Items to skip. Currently not supported.</br></br>`[optional] integer count`<br/>Maximum items to return. Currently not supported.</br></br>
 
 <h3 id="users_getv1previewusersbyids-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of Users found.|
+|200|List of [User](#schemauser)s|List of Users found.|
 |207|[UserMultiStatusResponse](#schemausermultistatusresponse)|List of Users found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
@@ -800,12 +864,13 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Users
+## GetV1PreviewUsersStatusByIds
 
 <a id="opIdUsers_GetV1PreviewUsersStatusByIds"></a>
 
@@ -818,14 +883,14 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 
 <h3 id="users_getv1previewusersstatusbyids-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] array[string] userId`<br/>Unordered list of ids for all users.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Items to skip. Currently not supported.</br></br>`[optional] integer(int32) count`<br/>Maximum number of items to retrieve. Currently not supported.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] array userId`<br/>Unordered list of ids for all users.</br></br>`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Items to skip. Currently not supported.</br></br>`[optional] integer count`<br/>Maximum number of items to retrieve. Currently not supported.</br></br>
 
 <h3 id="users_getv1previewusersstatusbyids-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of User Statuses found.|
+|200|List of [UserStatus](#schemauserstatus)s|List of User Statuses found.|
 |207|[UserStatusMultiStatusResponse](#schemauserstatusmultistatusresponse)|List of User Statuses found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
@@ -862,12 +927,13 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST Users
+## CreateV1PreviewUser
 
 <a id="opIdUsers_CreateV1PreviewUser"></a>
 
@@ -896,7 +962,7 @@ User values to use during creating.<br/>
 
 <h3 id="users_createv1previewuser-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="users_createv1previewuser-responses">Responses</h3>
 
@@ -934,12 +1000,13 @@ User values to use during creating.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT Users
+## UpdateV1PreviewUser
 
 <a id="opIdUsers_UpdateV1PreviewUser"></a>
 
@@ -968,7 +1035,7 @@ A UserStatus object.<br/>
 
 <h3 id="users_updatev1previewuser-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) userId`<br/>Id of user.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string userId`<br/>Id of user.</br></br>
 
 <h3 id="users_updatev1previewuser-responses">Responses</h3>
 
@@ -1006,10 +1073,11 @@ A UserStatus object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

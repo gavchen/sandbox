@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_IdentityProviders_Claims v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_identityproviders_claims-claims">Claims</h1>
 
-## GET Claims
+## GetIdentityProviderClaims
 
 <a id="opIdClaims_GetIdentityProviderClaims"></a>
 
@@ -26,14 +15,14 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 
 <h3 id="claims_getidentityproviderclaims-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of Identity Providers to skip.</br></br>`[optional] integer(int32) count`<br/>Maximum number of Identity Providers to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of Identity Providers to skip.</br></br>`[optional] integer count`<br/>Maximum number of Identity Providers to return.</br></br>
 
 <h3 id="claims_getidentityproviderclaims-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|List of Identity Provider Claims found.|
+|200|List of [IdentityProviderClaim](#schemaidentityproviderclaim)s|List of Identity Provider Claims found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad Request.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -59,12 +48,13 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Claims
+## GetIdentityProviderClaimsHeader
 
 <a id="opIdClaims_GetIdentityProviderClaimsHeader"></a>
 
@@ -77,7 +67,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 
 <h3 id="claims_getidentityproviderclaimsheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="claims_getidentityproviderclaimsheader-responses">Responses</h3>
 
@@ -91,12 +81,13 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST Claims
+## PostIdentityProviderClaim
 
 <a id="opIdClaims_PostIdentityProviderClaim"></a>
 
@@ -123,7 +114,7 @@ Identity Provider Claim to create.<br/>
 
 <h3 id="claims_postidentityproviderclaim-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="claims_postidentityproviderclaim-responses">Responses</h3>
 
@@ -156,12 +147,13 @@ Identity Provider Claim to create.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET Claims
+## GetIdentityProviderClaim
 
 <a id="opIdClaims_GetIdentityProviderClaim"></a>
 
@@ -174,7 +166,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
 
 <h3 id="claims_getidentityproviderclaim-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>`string(guid) identityProviderClaimId`<br/>Id of Identity Provider Claim.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>`string identityProviderClaimId`<br/>Id of Identity Provider Claim.</br></br>
 
 <h3 id="claims_getidentityproviderclaim-responses">Responses</h3>
 
@@ -203,12 +195,13 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD Claims
+## GetIdentityProviderClaimHeader
 
 <a id="opIdClaims_GetIdentityProviderClaimHeader"></a>
 
@@ -221,7 +214,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{i
 
 <h3 id="claims_getidentityproviderclaimheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>`string(guid) identityProviderClaimId`<br/>Id of Identity Provider Claim.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>`string identityProviderClaimId`<br/>Id of Identity Provider Claim.</br></br>
 
 <h3 id="claims_getidentityproviderclaimheader-responses">Responses</h3>
 
@@ -235,12 +228,13 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{i
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## PUT Claims
+## PutIdentityProviderClaim
 
 <a id="opIdClaims_PutIdentityProviderClaim"></a>
 
@@ -266,7 +260,7 @@ Updated Identity Provider Claim values.<br/>
 
 <h3 id="claims_putidentityproviderclaim-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>`string(guid) identityProviderClaimId`<br/>Id of Identity Provider Claim.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>`string identityProviderClaimId`<br/>Id of Identity Provider Claim.</br></br>
 
 <h3 id="claims_putidentityproviderclaim-responses">Responses</h3>
 
@@ -298,12 +292,13 @@ Updated Identity Provider Claim values.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## DELETE Claims
+## DeleteIdentityProviderClaim
 
 <a id="opIdClaims_DeleteIdentityProviderClaim"></a>
 
@@ -316,7 +311,7 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/
 
 <h3 id="claims_deleteidentityproviderclaim-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>`string(guid) identityProviderClaimId`<br/>Id of Identity Provider Claim.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>`string identityProviderClaimId`<br/>Id of Identity Provider Claim.</br></br>
 
 <h3 id="claims_deleteidentityproviderclaim-responses">Responses</h3>
 
@@ -344,10 +339,11 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

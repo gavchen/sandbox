@@ -1,20 +1,8 @@
----
-title: Identity_Storage_Controllers_Api_Tenants_IdentityProviders_IdentityProviders
-  v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_api_tenants_identityproviders_identityproviders-identityproviders">IdentityProviders</h1>
 
-## GET IdentityProviders
+## GetTenantIdentityProviders
 
 <a id="opIdIdentityProviders_GetTenantIdentityProviders"></a>
 
@@ -27,14 +15,14 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders
 
 <h3 id="identityproviders_gettenantidentityproviders-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of Identity Providers to skip.</br></br>`[optional] integer(int32) count`<br/>Maximum number of Identity Providers to return.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of Identity Providers to skip.</br></br>`[optional] integer count`<br/>Maximum number of Identity Providers to return.</br></br>
 
 <h3 id="identityproviders_gettenantidentityproviders-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Identity Providers found.|
+|200|List of [IdentityProvider](#schemaidentityprovider)s|Identity Providers found.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found.|
@@ -63,13 +51,18 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## POST IdentityProviders
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## AddTenantIdentityProvider
 
 <a id="opIdIdentityProviders_AddTenantIdentityProvider"></a>
 
@@ -100,7 +93,7 @@ IdentityProviderAdd object.<br/>
 
 <h3 id="identityproviders_addtenantidentityprovider-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="identityproviders_addtenantidentityprovider-responses">Responses</h3>
 
@@ -144,12 +137,13 @@ IdentityProviderAdd object.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD IdentityProviders
+## GetTenantIdentityProvidersHeader
 
 <a id="opIdIdentityProviders_GetTenantIdentityProvidersHeader"></a>
 
@@ -165,7 +159,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders
 
 <h3 id="identityproviders_gettenantidentityprovidersheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>
 
 <h3 id="identityproviders_gettenantidentityprovidersheader-responses">Responses</h3>
 
@@ -179,13 +173,18 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## GET IdentityProviders
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetTenantIdentityProvider
 
 <a id="opIdIdentityProviders_GetTenantIdentityProvider"></a>
 
@@ -198,7 +197,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 
 <h3 id="identityproviders_gettenantidentityprovider-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="identityproviders_gettenantidentityprovider-responses">Responses</h3>
 
@@ -238,13 +237,18 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## DELETE IdentityProviders
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## RemoveTenantIdentityProvider
 
 <a id="opIdIdentityProviders_RemoveTenantIdentityProvider"></a>
 
@@ -260,7 +264,7 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 
 <h3 id="identityproviders_removetenantidentityprovider-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="identityproviders_removetenantidentityprovider-responses">Responses</h3>
 
@@ -288,12 +292,13 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD IdentityProviders
+## GetTenantIdentityProviderHeader
 
 <a id="opIdIdentityProviders_GetTenantIdentityProviderHeader"></a>
 
@@ -308,7 +313,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 
 <h3 id="identityproviders_gettenantidentityproviderheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="identityproviders_gettenantidentityproviderheader-responses">Responses</h3>
 
@@ -322,13 +327,18 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## GET IdentityProviders
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetTenantIdentityProviderConsent
 
 <a id="opIdIdentityProviders_GetTenantIdentityProviderConsent"></a>
 
@@ -341,7 +351,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 
 <h3 id="identityproviders_gettenantidentityproviderconsent-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="identityproviders_gettenantidentityproviderconsent-responses">Responses</h3>
 
@@ -367,13 +377,18 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## POST IdentityProviders
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## UpdateTenantIdentityProviderConsent
 
 <a id="opIdIdentityProviders_UpdateTenantIdentityProviderConsent"></a>
 
@@ -398,7 +413,7 @@ Identity Provider Consent.<br/>
 
 <h3 id="identityproviders_updatetenantidentityproviderconsent-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="identityproviders_updatetenantidentityproviderconsent-responses">Responses</h3>
 
@@ -426,12 +441,13 @@ Identity Provider Consent.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## HEAD IdentityProviders
+## GetTenantIdentityProviderConsentHeader
 
 <a id="opIdIdentityProviders_GetTenantIdentityProviderConsentHeader"></a>
 
@@ -444,7 +460,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 
 <h3 id="identityproviders_gettenantidentityproviderconsentheader-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of Tenant.</br></br>`string(guid) identityProviderId`<br/>Id of Identity Provider.</br></br>
+`string tenantId`<br/>Id of Tenant.</br></br>`string identityProviderId`<br/>Id of Identity Provider.</br></br>
 
 <h3 id="identityproviders_gettenantidentityproviderconsentheader-responses">Responses</h3>
 
@@ -471,13 +487,18 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Member
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Member</li>
+</ul>
 
-## GET IdentityProviders
+<b>Strict Roles</b>
+<ul>
+<li>Account Administrator</li>
+</ul>
+
+## GetIdentityProviderUsers
 
 <a id="opIdIdentityProviders_GetIdentityProviderUsers"></a>
 
@@ -491,8 +512,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/users
 
 <h3 id="identityproviders_getidentityproviderusers-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) identityProviderId`<br/>Identity Provider Id.</br></br>`string query`<br/>Start of user name or Email to search for.</br></br>
-`[optional] integer(int32) count`<br/>Sets the page size of results.</br></br>`[optional] string skipToken`<br/>Retrieves the next page of results from result sets that span multiple pages.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string identityProviderId`<br/>Identity Provider Id.</br></br>`string query`<br/>Start of user name or Email to search for.</br></br>
+`[optional] integer count`<br/>Sets the page size of results.</br></br>`[optional] string skipToken`<br/>Retrieves the next page of results from result sets that span multiple pages.</br></br>
 
 <h3 id="identityproviders_getidentityproviderusers-responses">Responses</h3>
 
@@ -527,12 +548,13 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/users
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET IdentityProviders
+## GetIdentityProviderGroups
 
 <a id="opIdIdentityProviders_GetIdentityProviderGroups"></a>
 
@@ -546,8 +568,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups
 
 <h3 id="identityproviders_getidentityprovidergroups-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) identityProviderId`<br/>Identity Provider Id.</br></br>`string query`<br/>Start of user name or Email to search for.</br></br>
-`[optional] integer(int32) count`<br/>Sets the page size of results.</br></br>`[optional] string skipToken`<br/>Retrieves the next page of results from result sets that span multiple pages.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string identityProviderId`<br/>Identity Provider Id.</br></br>`string query`<br/>Start of user name or Email to search for.</br></br>
+`[optional] integer count`<br/>Sets the page size of results.</br></br>`[optional] string skipToken`<br/>Retrieves the next page of results from result sets that span multiple pages.</br></br>
 
 <h3 id="identityproviders_getidentityprovidergroups-responses">Responses</h3>
 
@@ -580,12 +602,13 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET IdentityProviders
+## GetIdentityProviderGroupsForUser
 
 <a id="opIdIdentityProviders_GetIdentityProviderGroupsForUser"></a>
 
@@ -599,8 +622,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Users/{use
 
 <h3 id="identityproviders_getidentityprovidergroupsforuser-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) identityProviderId`<br/>Identity Provider Id.</br></br>`string userId`<br/>Id of the user.</br></br>
-`[optional] integer(int32) skip`<br/>Indexes into a result set.</br></br>`[optional] integer(int32) count`<br/>Sets the page size of results.</br></br>`[optional] integer(int32) timeout`<br/>The maximum time to allow for searching groups before returning the groups.</br></br>`[optional] string skipToken`<br/>Retrieves the next page of results from result sets that span multiple pages.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string identityProviderId`<br/>Identity Provider Id.</br></br>`string userId`<br/>Id of the user.</br></br>
+`[optional] integer skip`<br/>Indexes into a result set.</br></br>`[optional] integer count`<br/>Sets the page size of results.</br></br>`[optional] integer timeout`<br/>The maximum time to allow for searching groups before returning the groups.</br></br>`[optional] string skipToken`<br/>Retrieves the next page of results from result sets that span multiple pages.</br></br>
 
 <h3 id="identityproviders_getidentityprovidergroupsforuser-responses">Responses</h3>
 
@@ -633,12 +656,13 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Users/{use
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## POST IdentityProviders
+## GetIdentityProviderGroupsByIds
 
 <a id="opIdIdentityProviders_GetIdentityProviderGroupsByIds"></a>
 
@@ -662,7 +686,7 @@ Group Id list.<br/>
 
 <h3 id="identityproviders_getidentityprovidergroupsbyids-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) identityProviderId`<br/>Identity Provider Id.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string identityProviderId`<br/>Identity Provider Id.</br></br>
 
 <h3 id="identityproviders_getidentityprovidergroupsbyids-responses">Responses</h3>
 
@@ -695,12 +719,13 @@ Group Id list.<br/>
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
-## GET IdentityProviders
+## GetIdentityProviderMembersInAGroup
 
 <a id="opIdIdentityProviders_GetIdentityProviderMembersInAGroup"></a>
 
@@ -714,8 +739,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups/{gr
 
 <h3 id="identityproviders_getidentityprovidermembersinagroup-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Tenant Id.</br></br>`string(guid) identityProviderId`<br/>Identity Provider Id.</br></br>`string groupId`<br/>External Id of the group.</br></br>
-`[optional] integer(int32) count`<br/>Sets the page size of results.</br></br>`[optional] string skipToken`<br/>Retrieves the next page of results from result sets that span multiple pages.</br></br>
+`string tenantId`<br/>Tenant Id.</br></br>`string identityProviderId`<br/>Identity Provider Id.</br></br>`string groupId`<br/>External Id of the group.</br></br>
+`[optional] integer count`<br/>Sets the page size of results.</br></br>`[optional] string skipToken`<br/>Retrieves the next page of results from result sets that span multiple pages.</br></br>
 
 <h3 id="identityproviders_getidentityprovidermembersinagroup-responses">Responses</h3>
 
@@ -757,10 +782,11 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups/{gr
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Account Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Account Administrator</li>
+</ul>
 
 # Schemas
 

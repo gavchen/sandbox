@@ -1,19 +1,8 @@
----
-title: Identity_Storage_Controllers_Ops_Roles v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_controllers_ops_roles-roles">Roles</h1>
 
-## GET Roles
+## GetRole
 
 <a id="opIdRoles_GetRole"></a>
 
@@ -26,7 +15,7 @@ GET /api/v1/Roles/{roleId}
 
 <h3 id="roles_getrole-parameters">Parameters</h3>
 
-`string(guid) roleId`<br/>Role Id.</br></br>
+`string roleId`<br/>Role Id.</br></br>
 
 <h3 id="roles_getrole-responses">Responses</h3>
 
@@ -54,7 +43,7 @@ GET /api/v1/Roles/{roleId}
 }
 ```
 
-## HEAD Roles
+## GetRoleHeader
 
 <a id="opIdRoles_GetRoleHeader"></a>
 
@@ -67,7 +56,7 @@ HEAD /api/v1/Roles/{roleId}
 
 <h3 id="roles_getroleheader-parameters">Parameters</h3>
 
-`string(guid) roleId`<br/>Id of provider.</br></br>
+`string roleId`<br/>Id of provider.</br></br>
 
 <h3 id="roles_getroleheader-responses">Responses</h3>
 
@@ -79,7 +68,7 @@ HEAD /api/v1/Roles/{roleId}
 |404|None|Role not found.|
 |500|None|Internal server error.|
 
-## PUT Roles
+## PutRole
 
 <a id="opIdRoles_PutRole"></a>
 
@@ -108,7 +97,7 @@ Role to update.<br/>
 
 <h3 id="roles_putrole-parameters">Parameters</h3>
 
-`string(guid) roleId`<br/>Role ID.</br></br>
+`string roleId`<br/>Role ID.</br></br>
 
 <h3 id="roles_putrole-responses">Responses</h3>
 
@@ -139,7 +128,7 @@ Role to update.<br/>
 }
 ```
 
-## DELETE Roles
+## DeleteRole
 
 <a id="opIdRoles_DeleteRole"></a>
 
@@ -152,7 +141,7 @@ DELETE /api/v1/Roles/{roleId}
 
 <h3 id="roles_deleterole-parameters">Parameters</h3>
 
-`string(guid) roleId`<br/>Role ID.</br></br>
+`string roleId`<br/>Role ID.</br></br>
 
 <h3 id="roles_deleterole-responses">Responses</h3>
 

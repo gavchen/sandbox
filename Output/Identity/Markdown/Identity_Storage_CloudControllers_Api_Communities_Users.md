@@ -1,19 +1,8 @@
----
-title: Identity_Storage_CloudControllers_Api_Communities_Users v20210115.09
-language_tabs: []
-toc_footers: []
-includes: []
-search: true
-code_clipboard: true
-highlight_theme: darkula
-headingLevel: 2
-generator: widdershins-osisoft v1.0.2
 
----
 
 <h1 id="identity_storage_cloudcontrollers_api_communities_users-users">Users</h1>
 
-## PUT Users
+## AddUserToCommunity
 
 <a id="opIdUsers_AddUserToCommunity"></a>
 
@@ -26,7 +15,7 @@ PUT /api/v1/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
 
 <h3 id="users_addusertocommunity-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of the Tenant that belongs to this Community</br></br>`string(guid) communityId`<br/>Id of Community.</br></br>`string(guid) userId`<br/>Id of the User to add to the specified Community.</br></br>
+`string tenantId`<br/>Id of the Tenant that belongs to this Community</br></br>`string communityId`<br/>Id of Community.</br></br>`string userId`<br/>Id of the User to add to the specified Community.</br></br>
 
 <h3 id="users_addusertocommunity-responses">Responses</h3>
 
@@ -63,12 +52,14 @@ PUT /api/v1/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Administrator</li>
+<li>Community Moderator</li>
+</ul>
 
-## DELETE Users
+## RemoveUserFromCommunity
 
 <a id="opIdUsers_RemoveUserFromCommunity"></a>
 
@@ -81,7 +72,7 @@ DELETE /api/v1/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
 
 <h3 id="users_removeuserfromcommunity-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string(guid) communityId`<br/>Id of Community.</br></br>`string(guid) userId`<br/>Id of the user to remove from the specified Community.</br></br>
+`string tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string communityId`<br/>Id of Community.</br></br>`string userId`<br/>Id of the user to remove from the specified Community.</br></br>
 
 <h3 id="users_removeuserfromcommunity-responses">Responses</h3>
 
@@ -109,12 +100,14 @@ DELETE /api/v1/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Administrator</li>
+<li>Community Moderator</li>
+</ul>
 
-## GET Users
+## GetAllUsers
 
 <a id="opIdUsers_GetAllUsers"></a>
 
@@ -127,14 +120,14 @@ GET /api/v1/Tenants/{tenantId}/Communities/{communityId}/Users
 
 <h3 id="users_getallusers-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string(guid) communityId`<br/>Id of Community.</br></br>
-`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer(int32) skip`<br/>Number of users to skip.</br></br>`[optional] integer(int32) count`<br/>Maximum number of users to return.</br></br>
+`string tenantId`<br/>Id of the Tenant that belongs to this Community.</br></br>`string communityId`<br/>Id of Community.</br></br>
+`[optional] string query`<br/>Query to execute. Currently not supported.</br></br>`[optional] integer skip`<br/>Number of users to skip.</br></br>`[optional] integer count`<br/>Maximum number of users to return.</br></br>
 
 <h3 id="users_getallusers-responses">Responses</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Success.|
+|200|List of [User](#schemauser)s|Success.|
 |400|[ErrorResponse](#schemaerrorresponse)|BadRequest.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
@@ -167,12 +160,13 @@ GET /api/v1/Tenants/{tenantId}/Communities/{communityId}/Users
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Member
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Member</li>
+</ul>
 
-## HEAD Users
+## GetAllUsersCount
 
 <a id="opIdUsers_GetAllUsersCount"></a>
 
@@ -186,7 +180,7 @@ HEAD /api/v1/Tenants/{tenantId}/Communities/{communityId}/Users
 
 <h3 id="users_getalluserscount-parameters">Parameters</h3>
 
-`string(guid) tenantId`<br/>Id of the calling Tenant that belongs to this Community.</br></br>`string(guid) communityId`<br/>Id of Community.</br></br>
+`string tenantId`<br/>Id of the calling Tenant that belongs to this Community.</br></br>`string communityId`<br/>Id of Community.</br></br>
 
 <h3 id="users_getalluserscount-responses">Responses</h3>
 
@@ -214,10 +208,13 @@ HEAD /api/v1/Tenants/{tenantId}/Communities/{communityId}/Users
 
 ### Authorization
 
-To perform this operation, you must have one of the following roles:
-```text
-Community Administrator
-```
+To perform this operation, you must have one of the following roles: </br></br>
+<b>Authorized Roles</b> 
+<ul>
+<li>Community Administrator</li>
+<li>Community Moderator</li>
+<li>Community Member</li>
+</ul>
 
 # Schemas
 
