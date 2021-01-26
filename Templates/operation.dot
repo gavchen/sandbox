@@ -23,6 +23,8 @@
 {{? data.operation.description}}{{= data.operation.description }}{{?}}
 
 {{? data.operation.requestBody}}
+{{ var bodyParameterExamples = data.utils.getBodyParameterExamples(data); }}
+{{? bodyParameterExamples !== null}}
 ### Request Body
 {{? data.parameters && data.parameters.length }}
 {{~ data.parameters :p}}{{? p.name == 'body'}}{{=p.shortDesc}}<br/>{{?}}
@@ -33,7 +35,8 @@
 {{= data.bodyParameter.exampleValues.description }}
 {{?}}
 
-{{= data.utils.getBodyParameterExamples(data) }}
+{{= bodyParameterExamples }}
+{{?}}
 {{?}}
 
 {{? data.parameters && data.parameters.length }}

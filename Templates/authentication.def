@@ -3,7 +3,7 @@
 
 {{? data.security && data.security.length}}
 {{= data.tags.section }}
-To perform this operation, you must have one of the following roles: </br></br>
+To perform this operation, you must have one of the following roles: <br/><br/>
 <b>Authorized Roles</b> 
 {{= data.utils.getAuthorizationStr(data) }}
 {{= data.tags.endSection }}
